@@ -18,6 +18,15 @@ const config = {
       },
     },
     extend: {
+      colors: {
+        primary: "#FFA500",
+        secondary: "#7a7a7a",
+        tertiary: "#FF6347",
+        dark: "#1A1A1A",
+        light: "#F5F5F5",
+      },
+
+      
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
