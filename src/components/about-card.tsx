@@ -11,7 +11,7 @@ interface Props {
   }[];
 }
 
-export default function AboutCard({ title, paragraph, images}: Props) {
+export default function AboutCard({ title, paragraph, images }: Props) {
   return (
     <div className="flex justify-center flex-col ">
       <h3 className="text-3xl">Commercial & Editorial Assignment Photography</h3>
@@ -21,8 +21,12 @@ export default function AboutCard({ title, paragraph, images}: Props) {
         trusted my photography and logistical skills to capture the best creative images of a situation or person – on-time and on-budget.
       </p>
 
-      <div>
+      <div className="mb-10">
         <SimpleSwiper images={images} />
+      </div>
+
+      <div>
+        <button>Read All</button>
       </div>
     </div>
   );
