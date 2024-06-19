@@ -26,7 +26,7 @@ export default function AboutCard({ title, paragraph, images }: Props) {
       </div>
 
       <div>
-        <button>Read All</button>
+        <button className="bg-success px-8 py-2">Read More</button>
       </div>
     </div>
   );

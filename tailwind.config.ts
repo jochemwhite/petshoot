@@ -1,13 +1,8 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-  ],
+  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
     container: {
@@ -17,16 +12,26 @@ const config = {
         "2xl": "1400px",
       },
     },
-    extend: {
-      colors: {
-        primary: "#FFA500",
-        secondary: "#7a7a7a",
-        tertiary: "#FF6347",
-        dark: "#1A1A1A",
-        light: "#F5F5F5",
-      },
-
+    colors: {
+      brandPrimary: "#7F54B3",
+      success: "#7ad03a",
+      danger: "#a00",
+      warning: "#ffba00",
+      info: "#2ea2cc",
+      primary: "#7F54B3",
+      "primary-text": "#ffffff", // Converted 'white' to hex
+      secondary: "#e9e6ed",
+      "secondary-text": "#515151",
+      highlight: "#b3af54",
+      "highlight-text": "#ffffff", // Converted 'white' to hex
+      "content-bg": "#ffffff", // Converted 'white' to hex
+      subtext: "#767676",
+      "sub-dark": "#141414",
+      "dark": "#0D0D0D",
       
+    },
+
+    extend: {
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -44,6 +49,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;

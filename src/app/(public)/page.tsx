@@ -1,6 +1,7 @@
 import { Hero } from "@/components/Hero";
 import AboutCard from "@/components/about-card";
 import CategoryCard from "@/components/category-card";
+import InstaFeed from "@/components/insta-feed";
 import type { ImageType } from "@/types";
 import Image from "next/image";
 
@@ -30,6 +31,18 @@ export default function Home() {
       src: "/img/dogs/dog6.jpg",
       alt: "dog6",
     },
+    {
+      src: "/img/dogs/dog6.jpg",
+      alt: "dog6",
+    },
+    {
+      src: "/img/dogs/dog6.jpg",
+      alt: "dog6",
+    },
+    {
+      src: "/img/dogs/dog6.jpg",
+      alt: "dog6",
+    },
   ];
 
   return (
@@ -42,10 +55,10 @@ export default function Home() {
         <div className="flex-1">
           <h2 className="text-3xl mb-5">Portfolio Showcase</h2>
 
-          <p className="text-sm text-secondary">Some of the best photos from our studi</p>
+          <p className="text-sm text-subtext">Some of the best photos from our studi</p>
         </div>
 
-        <div className="flex-1">
+        <div className="flex-1 text-secondary-text">
           <p className="mb-5">
             Aliquam ullamcorper ex nunc, eu ultricies neque sagittis at. Praesent porta, tortor non commodo fermentum, nunc urna egestas leo, ac
             tristique turpis nunc sed ante. In ultrices pharetra leo quis porta. In sit amet scelerisque urna, tincidunt commodo sem.
@@ -77,8 +90,8 @@ export default function Home() {
           />
 
           <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center">
-            <h2 className="text-3xl text-white">We shoot beautiful pictures</h2>
-            <p className="text-white">Lorem ipsum, dolor sit amet consectetur adipisicing elit</p>
+            <h2 className="text-3xl text-primary-text">We shoot beautiful pictures</h2>
+            <p className="text-subtext">Lorem ipsum, dolor sit amet consectetur adipisicing elit</p>
           </div>
         </div>
       </section>
@@ -94,6 +107,10 @@ export default function Home() {
           title="Commercial & Editorial Assignment Photography"
           paragraph="I have performed professional corporate and editorial photography for many local & international clients. Corporate and editorial clients have trusted my photography and logistical skills to capture the best creative images of a situation or person – on-time and on-budget."
         />
+      </section>
+
+      <section className="my-[150px] w-[1120px] mx-auto ">
+          <InstaFeed imgs={images} />
       </section>
     </main>
   );
