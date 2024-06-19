@@ -16,7 +16,7 @@ export default function CategoryCard({ img, alt, catagory, href }: Props) {
       </div>
 
       <div className="absolute bottom-5 -ml-4 ">
-        <button className="bg-success text-white px-4 py-2 w-60 ">
+        <button className="bg-success text-white px-4 py-2 w-60 shadow-2xl ">
           {catagory}
         </button>
 

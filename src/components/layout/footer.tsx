@@ -1,5 +1,6 @@
 import { SocialsType } from "@/types";
 import React from "react";
+import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -46,14 +47,14 @@ export default function Footer() {
           <p>(C) 2022 - {currentYear} All Rights Reserved </p>
         </div>
         <div>
-          <p>
-            <a href="https://frenify.com" target="_blank" rel="noreferrer">
-              Petshoot
-            </a>
-          </p>
+          <Link href="/" target="_blank" rel="noreferrer">
+            Petshoot
+          </Link>
         </div>
         <div className="flex items-center justify-center">
-          <p>Site By Gaëlle Jonkers & <br /> Jochem van der Wit</p>
+          <p>
+            Site By Gaëlle Jonkers & <br /> Jochem van der Wit
+          </p>
         </div>
       </div>
     </footer>

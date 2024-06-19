@@ -77,8 +77,8 @@ export default function Home() {
         <CategoryCard img="/img/dogs/dog1.jpg" alt="dog1" catagory="Dogs" href="/catagorys/dogs" />
       </section>
 
-      <section className="my-[150px]">
-        <div className="w-full h-[250px] bg-white relative">
+      <section className="my-[150px] bg-info skew-y-3 overflow-hidden relative">
+        <div className="w-full h-[500px] bg-white relative -skew-y-3 scale-125">
           <Image
             src="/img/dogs/dog1.jpg"
             alt="dog1"
@@ -87,6 +87,7 @@ export default function Home() {
               objectFit: "cover",
               objectPosition: "center",
             }}
+            className="fixed top-0 left-0 w-full h-full"
           />
 
           <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center">
