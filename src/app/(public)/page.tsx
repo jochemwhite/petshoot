@@ -51,14 +51,14 @@ export default function Home() {
         <Hero images={images.map((img) => img.src)} />
       </section>
 
-      <section className="w-[1600px] flex justify-between items-center mx-auto my-[150px]">
+      <section className="w-full flex flex-col justify-between items-center mx-auto my-8 lg:flex-row lg:w-[1600px]">
         <div className="flex-1">
-          <h2 className="text-3xl mb-5">Portfolio Showcase</h2>
+          <h2 className="text-3xl mb-2">Portfolio Showcase</h2>
 
           <p className="text-sm text-subtext">Some of the best photos from our studi</p>
         </div>
 
-        <div className="flex-1 text-secondary-text">
+        <div className="flex-1 text-secondary-text p-4">
           <p className="mb-5">
             Aliquam ullamcorper ex nunc, eu ultricies neque sagittis at. Praesent porta, tortor non commodo fermentum, nunc urna egestas leo, ac
             tristique turpis nunc sed ante. In ultrices pharetra leo quis porta. In sit amet scelerisque urna, tincidunt commodo sem.
@@ -71,14 +71,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="grid grid-cols-3 gap-7  w-[1600px] mx-auto items-center justify-center my-[150px] ">
+      <section className="grid grid-cols-1 gap-7 p-4  w-full mx-auto items-center justify-center my-[150px] lg:w-[1600px] lg:grid-cols-3">
         <CategoryCard img="/img/dogs/dog1.jpg" alt="dog1" catagory="Dogs" href="/catagorys/dogs" />
         <CategoryCard img="/img/dogs/dog1.jpg" alt="dog1" catagory="Dogs" href="/catagorys/dogs" />
         <CategoryCard img="/img/dogs/dog1.jpg" alt="dog1" catagory="Dogs" href="/catagorys/dogs" />
       </section>
 
-      <section className="my-[150px] bg-info skew-y-3 overflow-hidden relative">
-        <div className="w-full h-[500px] bg-white relative -skew-y-3 scale-125">
+      <section className="my-[150px] bg-info skew-y-3 overflow-hidden relative ">
+        <div className="w-full h-[500px] bg-white relative -skew-y-3 scale-105 md:scale-125">
           <Image
             src="/img/dogs/dog1.jpg"
             alt="dog1"
@@ -91,13 +91,13 @@ export default function Home() {
           />
 
           <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center">
-            <h2 className="text-3xl text-primary-text">We shoot beautiful pictures</h2>
-            <p className="text-subtext">Lorem ipsum, dolor sit amet consectetur adipisicing elit</p>
+            <h2 className="text-2xl text-primary-text">We shoot beautiful pictures</h2>
+            <p className="text-subtext text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit</p>
           </div>
         </div>
       </section>
 
-      <section className="grid grid-cols-2 gap-7  w-[1600px] mx-auto items-center justify-center my-[150px] ">
+      <section className="grid grid-cols-1 gap-7 mx-auto items-center justify-center my-[150px] p-4  md:grid-cols-2 lg:w-[1600px]">
         <AboutCard
           images={images}
           title="Commercial & Editorial Assignment Photography"
@@ -110,7 +110,7 @@ export default function Home() {
         />
       </section>
 
-      <section className="my-[150px] w-[1120px] mx-auto ">
+      <section className="my-[150px] w-full mx-auto lg:w-[1600px]">
           <InstaFeed imgs={images} />
       </section>
     </main>

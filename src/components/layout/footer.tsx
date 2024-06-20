@@ -31,7 +31,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="flex justify-center items-center h-20 bg-sub-dark text-subtext text-white">
-        <ul className="flex gap-4">
+        <ul className="flex gap-2">
           {socials.map((social, idx) => (
             <li key={idx}>
               <a href={social.url} target="_blank" rel="noreferrer">
@@ -42,7 +42,7 @@ export default function Footer() {
         </ul>
       </div>
 
-      <div className="flex justify-around items-center h-60 bg-gray-800 text-subtext bg-dark">
+      <div className="flex flex-col justify-around items-center h-60 bg-gray-800 text-subtext bg-dark lg:flex-row">
         <div>
           <p>(C) 2022 - {currentYear} All Rights Reserved </p>
         </div>
@@ -53,7 +53,7 @@ export default function Footer() {
         </div>
         <div className="flex items-center justify-center">
           <p>
-            Site By Gaëlle Jonkers & <br /> Jochem van der Wit
+            Site By Gaëlle Jonkers &  Jochem van der Wit
           </p>
         </div>
       </div>

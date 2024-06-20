@@ -13,8 +13,8 @@ interface Props {
 
 export default function AboutCard({ title, paragraph, images }: Props) {
   return (
-    <div className="flex justify-center flex-col ">
-      <h3 className="text-3xl">Commercial & Editorial Assignment Photography</h3>
+    <div className="flex justify-center flex-col  ">
+      <h3 className="text-3xl text-center">Commercial & Editorial Assignment Photography</h3>
 
       <p className="my-10">
         I have performed professional corporate and editorial photography for many local & international clients. Corporate and editorial clients have
