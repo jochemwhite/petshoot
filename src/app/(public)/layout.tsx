@@ -1,4 +1,5 @@
 import Footer from "@/components/layout/footer";
+import Header from "@/components/layout/header";
 import React from "react";
 
 interface Props {
@@ -7,6 +8,7 @@ interface Props {
 export default function PublicLayout({ children }: Props) {
   return (
     <>
+      <Header />
       {children}
       <Footer />
     </>
