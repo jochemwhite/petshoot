@@ -31,10 +31,9 @@ interface HamburgerMenuProps {
 export const HamburgerMenu = ({ links }: HamburgerMenuProps) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
 
-  const toggleMenu = () => toggleOpen();
 
   return (
-    <motion.nav initial={false} animate={isOpen ? "open" : "closed"} className="relative h-full flex lg:hidden flex-col justify-center items-end w-full">
+    <motion.nav initial={false} animate={isOpen ? "open" : "closed"} className="h-full flex lg:hidden flex-col justify-center items-end w-full">
       <MenuToggle toggle={() => toggleOpen()} />
       <motion.div className="absolute top-0 right-0 bg-content-bg h-screen w-full" variants={sidebar}>
         <Navigation Links={links} toggleMenu={toggleOpen} />

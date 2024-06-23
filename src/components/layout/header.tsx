@@ -10,13 +10,10 @@ export interface Link {
   href: string;
 }
 
-
 export default function Header() {
   const { scrollYProgress } = useScroll();
   const [scrollY, setScrollY] = useState<number>(0);
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
- 
 
   const links: Link[] = [
     {
@@ -43,24 +40,31 @@ export default function Header() {
 
   return (
     <header
-      className={cn("fixed z-50 h-20 w-full text-secondary-text text-xl", {
-        "backdrop-blur-md": scrollY > 0.1,
+      className={cn("fixed top-0 z-50 h-20 w-full text-secondary-text text-xl ", {
+        "backdrop-blur-md": scrollY === 0,
+        // "bg-content-bg": scrollY > 0,
       })}
     >
-      {/* hamburger menu */}
-      <HamburgerMenu links={links} />
+      <div className="flex items-center justify-between h-full lg:w-[1600px] mx-auto relative">
+        <div className="flex">
+          <Link href="/" className="text-2xl font-bold">
+            Logo
+          </Link>
+        </div>
+        {/* hamburger menu */}
+        <HamburgerMenu links={links} />
+        <nav className="hidden lg:block h-full relative">
+          {/* desktop menu */}
 
-      <nav className="hidden lg:block h-full relative">
-        {/* desktop menu */}
-
-        <ul className="hidden lg:flex h-full justify-center items-center ">
-          {links.map((link) => (
-            <li key={link.name} className="mx-5">
-              <Link href={link.href}>{link.name}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+          <ul className="hidden lg:flex h-full justify-center items-center ">
+            {links.map((link) => (
+              <li key={link.name} className="mx-5">
+                <Link href={link.href}>{link.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 }

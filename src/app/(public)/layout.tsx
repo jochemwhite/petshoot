@@ -10,7 +10,7 @@ export default function PublicLayout({ children }: Props) {
     <>
       <Header />
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

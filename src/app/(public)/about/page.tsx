@@ -1,7 +1,10 @@
-import React from 'react'
+import Banner from "@/components/banner";
+import React from "react";
 
-export default function page() {
+export default function AboutPage() {
   return (
-    <div>page</div>
-  )
+    <main className="h-full  mt-20 ">
+      <Banner />
+    </main>
+  );
 }
