@@ -1,6 +1,7 @@
 import Banner from "@/components/banner";
 import MyLatestWork from "@/components/my-latest-work";
 import SocialButton from "@/components/social-button";
+import SocialLlist from "@/components/social-list";
 import TextColumn from "@/components/ui/text-column";
 import { images } from "@/lib/const";
 import Image from "next/image";
@@ -25,6 +26,8 @@ export default function AboutPage() {
     <main className="h-full  mt-20 ">
       {/* Banner */}
       <Banner
+        page="About Me"
+        breadcrumb="about"
         img={{
           src: "/img/dogs/dog1.jpg",
           alt: "",
@@ -41,23 +44,7 @@ export default function AboutPage() {
             consequuntur doloribus. Quos, quas.
           </p>
 
-          <ul className="flex mt-4 *:mx-2 *:h-10 *:w-10">
-            <li>
-              <SocialButton provider="facebook" />
-            </li>
-            <li>
-              <SocialButton provider="twitter" />
-            </li>
-            <li>
-              <SocialButton provider="pinterest" />
-            </li>
-            <li>
-              <SocialButton provider="instagram" />
-            </li>
-            <li>
-              <SocialButton provider="linkedin" />
-            </li>
-          </ul>
+          <SocialLlist />
         </div>
 
         <div className="w-full h-96 relative mx-auto mt-8">

@@ -1,4 +1,5 @@
-import { ImageType } from "@/types";
+import { ContactType, ImageType } from "@/types";
+import { FaDollarSign, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
 export const images: ImageType[] = [
   {
@@ -36,5 +37,28 @@ export const images: ImageType[] = [
   {
     src: "/img/dogs/dog6.jpg",
     alt: "dog6",
+  },
+];
+
+export const ContactDetails: ContactType[] = [
+  {
+    link: "mailto:contact@petshoot.nl",
+    value: "info@petshoot.nl",
+    icon: FaEnvelope,
+  },
+  {
+    link: "tel:0612345678",
+    value: "06-12345678",
+    icon: FaPhoneAlt,
+  },
+  {
+    link: "https://www.kvk.nl/",
+    value: "KVK Nummer: 00000000",
+    icon: FaDollarSign,
+  },
+  {
+    link: "https://www.kvk.nl/",
+    value: "BTW Nummer: 00000000",
+    icon: FaDollarSign,
   },
 ];

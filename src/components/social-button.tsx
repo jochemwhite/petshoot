@@ -12,7 +12,7 @@ export default function SocialButton({ provider }: SocialButtonProps) {
     return (
       <div className="w-full h-full bg-[#eee] rounded-full flex justify-center items-center ">
         <Link href="#">
-            <Icon size="fill" className="p-2 h-full w-full"/>
+            <Icon size="fill" className="p-2 h-full w-full text-subtext"/>
         </Link>
       </div>
     );

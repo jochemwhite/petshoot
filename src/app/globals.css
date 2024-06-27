@@ -1,4 +1,54 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-  
+@tailwind components;
+@tailwind utilities;
+
+/* send button */
+.bird {
+  display: block;
+  position: absolute;
+  background-image: url("http://cfriedri.ch/codepen/04/birds.svg");
+  background-size: auto 100%;
+  width: 60px;
+  height: 33px;
+  animation: fly-cycle 1s steps(3) infinite;
+}
+
+.bird--1,
+.bird--2,
+.bird--3,
+.bird--4,
+.bird--5,
+.bird--6,
+.bird--7,
+.bird--8,
+.bird--9,
+.bird--10,
+.bird--11,
+.bird--12,
+.bird--13,
+.bird--14,
+.bird--15,
+.bird--16,
+.bird--17,
+.bird--18,
+.bird--19,
+.bird--20,
+.bird--21,
+.bird--22,
+.bird--23,
+.bird--24,
+.bird--25,
+.bird--26,
+.bird--27,
+.bird--28,
+.bird--29,
+.bird--30 {
+  width: 30px;
+  height: 33px;
+}
+
+@keyframes fly-cycle {
+  100% {
+    background-position: -300px 0;
+  }
+}
