@@ -1,9 +1,9 @@
 "use client";
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import Image from "next/image";
+import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from "swiper/modules";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -20,7 +20,17 @@ interface Props {
 
 export default function SimpleSwiper({ images }: Props) {
   return (
-    <Swiper className="mySwiper" modules={[Navigation, Pagination, Scrollbar, A11y]} spaceBetween={50} slidesPerView={3} navigation>
+    <Swiper
+      className="mySwiper"
+      modules={[Pagination, Scrollbar, A11y, Autoplay, ]}
+      spaceBetween={50}
+      slidesPerView={4}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      loop={true}
+    >
       {images.map((img, index) => (
         <SwiperSlide key={index}>
           <SimpleSlide src={img.src} alt={img.alt} />
@@ -36,7 +46,7 @@ interface SimpleSlideProps {
 }
 function SimpleSlide({ alt, src }: SimpleSlideProps) {
   return (
-    <div className="w-32 h-32 bg-black">
+    <div className="w-full h-80 bg-black">
       <Image
         src={src}
         alt={alt}

@@ -11,13 +11,13 @@ export default function Banner({ img }: BannerProps) {
   return (
     <div className="w-full mt-9 bg-success h-80 relative flex flex-col justify-center items-center ">
       <Image
-        src="/img/dogs/dog1.jpg"
+        src={img.src}
         layout="fill"
         style={{
           objectFit: "cover",
           objectPosition: "center",
         }}
-        alt=""
+        alt={img.alt}
       />
       <div className="flex flex-col z-10 justify-center items-center">
         <p>

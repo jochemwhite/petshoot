@@ -2,51 +2,14 @@ import { Hero } from "@/components/Hero";
 import AboutCard from "@/components/about-card";
 import CategoryCard from "@/components/category-card";
 import InstaFeed from "@/components/insta-feed";
-import type { ImageType } from "@/types";
+import { images } from "@/lib/const";
 import Image from "next/image";
 
 export default function Home() {
-  const images: ImageType[] = [
-    {
-      src: "/img/dogs/dog1.jpg",
-      alt: "dog1",
-    },
-    {
-      src: "/img/dogs/dog2.jpg",
-      alt: "dog2",
-    },
-    {
-      src: "/img/dogs/dog3.jpg",
-      alt: "dog3",
-    },
-    {
-      src: "/img/dogs/dog4.jpg",
-      alt: "dog4",
-    },
-    {
-      src: "/img/dogs/dog5.jpg",
-      alt: "dog5",
-    },
-    {
-      src: "/img/dogs/dog6.jpg",
-      alt: "dog6",
-    },
-    {
-      src: "/img/dogs/dog6.jpg",
-      alt: "dog6",
-    },
-    {
-      src: "/img/dogs/dog6.jpg",
-      alt: "dog6",
-    },
-    {
-      src: "/img/dogs/dog6.jpg",
-      alt: "dog6",
-    },
-  ];
+
 
   return (
-    <main className="">
+    <main className=""> 
       <section className="min-h-screen">
         <Hero images={images.map((img) => img.src)} />
       </section>

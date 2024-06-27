@@ -41,8 +41,8 @@ export default function Header() {
   return (
     <header
       className={cn("fixed top-0 z-50 h-20 w-full text-secondary-text text-xl ", {
-        "backdrop-blur-md": scrollY === 0,
-        // "bg-content-bg": scrollY > 0,
+        // "backdrop-blur-md": scrollY === 0,
+        "backdrop-blur-md": scrollY > 0,
       })}
     >
       <div className="flex items-center justify-between h-full lg:w-[1600px] mx-auto relative">
