@@ -1,14 +1,15 @@
 "use client";
-import React from "react";
+import { AnimatedInput } from "@/components/ui/animated-input";
+import { AnimatedTextArea } from "@/components/ui/animeted-textarea";
+import { Button } from "@/components/ui/button";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { ContactFormSchema } from "@/schema/contact-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { ContactFormSchema } from "@/schema/contact-schema";
-import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { AnimatedInput } from "@/components/ui/animated-input";
-import { AnimatedLabel } from "../ui/animated-label";
-import { cn } from "@/lib/utils";
+import Recaptcha from "../recaptcha";
+import { Input } from "../ui/input";
+import { HandleContactForm } from "@/actions/forms/contact";
 
 export default function ContactForm() {
   const form = useForm<z.infer<typeof ContactFormSchema>>({
@@ -18,14 +19,16 @@ export default function ContactForm() {
       email: "",
       subject: "",
       message: "",
+      phone: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof ContactFormSchema>) {
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof ContactFormSchema>) {
+    if(values.phone) return;
+
+    await HandleContactForm({ values });
+
   }
-
-
 
   return (
     <Form {...form}>
@@ -33,7 +36,7 @@ export default function ContactForm() {
         <div className="grid grid-cols-2 gap-4">
           <FormField
             control={form.control}
-            name="name"            
+            name="name"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Name</FormLabel>
@@ -46,7 +49,7 @@ export default function ContactForm() {
           />
           <FormField
             control={form.control}
-            name="email"            
+            name="email"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Email</FormLabel>
@@ -59,7 +62,7 @@ export default function ContactForm() {
           />
           <FormField
             control={form.control}
-            name="subject"            
+            name="subject"
             render={({ field }) => (
               <FormItem className="col-span-2">
                 <FormLabel>Subject</FormLabel>
@@ -72,22 +75,35 @@ export default function ContactForm() {
           />
           <FormField
             control={form.control}
-            name="name"            
+            name="message"
             render={({ field }) => (
               <FormItem className="col-span-2">
                 <FormLabel>Message</FormLabel>
                 <FormControl>
-                  <AnimatedInput placeholder="John Doe" {...field} />
+                  <AnimatedTextArea placeholder="How can we help you?" className="min-h-44" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
         </div>
+
+        <FormField
+          control={form.control}
+          name="phone"
+          render={({ field }) => (
+            <FormItem className="col-span-2 hidden">
+              <FormLabel>Phone</FormLabel>
+              <FormControl>
+                <Input placeholder="+3161554333" type="tel"  {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>
   );
 }
-
-

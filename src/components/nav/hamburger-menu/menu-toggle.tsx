@@ -2,7 +2,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 
 export const MenuToggle = ({ toggle }: { toggle: () => void }) => (
-  <button onClick={toggle} className="mr-4 z-10">
+  <button onClick={toggle} className="mr-4 z-10 text-warning">
     <svg width="23" height="23" viewBox="0 0 23 23">
       <motion.path
         fill="transparent"
