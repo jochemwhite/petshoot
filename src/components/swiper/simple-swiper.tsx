@@ -10,6 +10,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { useEffect, useState } from "react";
+import useWindowSize from "@/hooks/useWindowSize";
 
 interface Props {
   images: {
@@ -19,12 +21,25 @@ interface Props {
 }
 
 export default function SimpleSwiper({ images }: Props) {
+  const [slideCount, setSlideCount] = useState(1);
+  const { width } = useWindowSize();
+
+  useEffect(() => {
+    if (width < 640) {
+      setSlideCount(1);
+    } else if (width < 768) {
+      setSlideCount(2);
+    } else {
+      setSlideCount(4);
+    }
+  }, [width]);
+
   return (
     <Swiper
       className="mySwiper"
-      modules={[Pagination, Scrollbar, A11y, Autoplay, ]}
+      modules={[Pagination, Scrollbar, A11y, Autoplay]}
       spaceBetween={50}
-      slidesPerView={4}
+      slidesPerView={slideCount}
       autoplay={{
         delay: 2500,
         disableOnInteraction: false,
