@@ -21,7 +21,7 @@ export default function Introduction() {
             </div>
             <div className="p-8 bg-card rounded-xl shadow-lg">
               <h3 className="text-2xl font-semibold mb-4">Beautiful Results</h3>
-              <p className="text-lg text-muted-foreground">High-quality, professionally edited photos you'll cherish forever</p>
+              <p className="text-lg text-muted-foreground">High-quality, professionally edited photos you&apos;ll cherish forever</p>
             </div>
           </div>
         </div>

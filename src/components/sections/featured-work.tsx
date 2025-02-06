@@ -11,7 +11,7 @@ export default function FeaturedWork() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             "https://images.unsplash.com/photo-1548199973-03cce0bbc87b",
-            "https://images.unsplash.com/photo-1599692392256-2d0a49e55c202",
+            "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e",
             "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
           ].map((url, index) => (
             <div key={index} className="relative group overflow-hidden rounded-2xl">

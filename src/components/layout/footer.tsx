@@ -4,7 +4,7 @@ import { Camera, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 export function Footer() {
   return (
     <footer className="bg-background border-t">
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto px-6 py-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand Section */}
           <div className="space-y-4">
@@ -79,7 +79,7 @@ export function Footer() {
                   <span>
                     Goudhaver 75
                     <br />
-                    3892BJ Zeewolde
+                    3892BJ, Zeewolde
                   </span>
                 </div>
               </li>

@@ -90,7 +90,7 @@ export default function PortfolioPage() {
           <h1 className="text-4xl font-bold mb-4">Our Portfolio</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Explore our collection of pet portraits, capturing the unique personality 
-            and charm of each furry friend we've had the pleasure to photograph.
+            and charm of each furry friend we&apos;ve had the pleasure to photograph.
           </p>
         </div>
 

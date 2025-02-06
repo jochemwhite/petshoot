@@ -13,14 +13,14 @@ export default function Hero() {
 
       <div className="relative h-full flex flex-col items-center justify-center text-white text-center px-4 pt-24 pb-16">
         <h1 className="text-6xl md:text-8xl font-bold mb-8">
-          Capturing Your Pet's
+          Capturing Your Pet&apos;s
           <br />
           <span className="text-primary-foreground">Perfect Moments</span>
         </h1>
         <p className="text-2xl md:text-3xl mb-12 max-w-3xl">
           Professional pet photography that celebrates the unique personality and charm of your furry family members
         </p>
-        <div className="flex gap-6">
+        <div className="flex gap-6 flex-col md:flex-row">
           <Link href="/portfolio">
             <Button size="lg" variant="default" className="text-xl px-8 py-6 h-auto">
               <Camera className="mr-3 h-6 w-6" />
