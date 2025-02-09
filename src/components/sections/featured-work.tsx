@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function FeaturedWork() {
   return (
@@ -15,14 +16,16 @@ export default function FeaturedWork() {
             "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
           ].map((url, index) => (
             <div key={index} className="relative group overflow-hidden rounded-2xl">
-              <img
+              <Image
                 src={url}
                 alt={`Featured pet ${index + 1}`}
                 className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-110"
+                width={320}
+                height={320}
               />
-              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <Link href="/portfolio" className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <Button variant="secondary">View Gallery</Button>
-              </div>
+              </Link>
             </div>
           ))}
         </div>

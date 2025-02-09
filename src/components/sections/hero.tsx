@@ -2,12 +2,13 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
 import { Camera, Heart } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section className="relative min-h-[100vh]">
       <div className="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e" alt="Hero pet" className="w-full h-full object-cover" />
+        <Image src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e" alt="Hero pet" className="w-full h-full object-cover" fill priority />
         <div className="absolute inset-0 bg-black/40" />
       </div>
 

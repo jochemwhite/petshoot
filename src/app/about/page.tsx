@@ -2,6 +2,7 @@ import { NumberTicker } from "@/components/number-ticker";
 import CallToAction from "@/components/sections/cta";
 import { Award, Camera, Heart, Star } from "lucide-react";
 import { Metadata } from "next";
+import Image from "next/image";
 
 
 export const metadata: Metadata = {
@@ -40,10 +41,11 @@ export default function Page() {
       {/* Hero Section */}
       <section className="relative h-[50vh] mb-16">
         <div className="absolute inset-0">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1587764379873-97837921fd44"
             alt="Pet photographer at work"
-            className="w-full h-full object-cover "
+            className="w-full h-full object-cover"
+            fill
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
@@ -73,7 +75,7 @@ export default function Page() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-background rounded-xl overflow-hidden shadow-lg">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
                 alt="Sarah Johnson"
                 className="w-full h-96 object-cover object-center"

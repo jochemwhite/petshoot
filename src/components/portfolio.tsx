@@ -1,8 +1,9 @@
-'use client'
+"use client";
 import { Camera, Filter } from "lucide-react";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const portfolioItems = [
   {
@@ -101,7 +102,7 @@ export default function Portfolio() {
             className="group relative aspect-square overflow-hidden rounded-lg cursor-pointer"
             onClick={() => setSelectedImage(item)}
           >
-            <img src={item.image} alt={item.title} className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110" />
+            <Image src={item.image} alt={item.title} className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110" fill />
             <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-6">
               <Camera className="w-8 h-8 mb-4" />
               <h3 className="text-xl font-semibold text-center mb-2">{item.title}</h3>
@@ -117,7 +118,9 @@ export default function Portfolio() {
           <DialogTitle>{selectedImage?.title}</DialogTitle>
           {selectedImage && (
             <div className="space-y-4">
-              <img src={selectedImage.image} alt={selectedImage.title} className="w-full rounded-lg" />
+              <div className="w-full rounded-lg relative min-h-96 h-[500px]">
+                <Image src={selectedImage.image} alt={selectedImage.title} className="w-full rounded-lg object-cover" fill />
+              </div>
               <div className="space-y-2">
                 <h2 className="text-2xl font-semibold">{selectedImage.title}</h2>
                 <p className="text-muted-foreground">{selectedImage.description}</p>

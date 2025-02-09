@@ -1,5 +1,6 @@
 import ContactForm from "@/components/forms/contact-form";
 import { Mail, MapPin, MessageSquare, Phone } from "lucide-react";
+import Image from "next/image";
 
 export const metadata = {
   title: "Contacteer Huisdierfotograaf in Zeewolde | Vragen? Neem Contact Op | Petshoot",
@@ -101,7 +102,7 @@ export default function ContactPage() {
 
             {/* Map Placeholder */}
             <div className="aspect-video bg-muted rounded-lg overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1" alt="Studio location" className="w-full h-full object-cover" />
+              <Image src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1" alt="Studio location" className="w-full h-full object-cover" fill />
             </div>
           </div>
 

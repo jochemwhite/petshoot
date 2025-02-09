@@ -25,14 +25,11 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4">Quick Links</h3>
+            <h3 className="font-semibold mb-4">Legal</h3>
             <ul className="space-y-3">
               {[
-                ["Home", "/"],
-                ["Portfolio", "/portfolio"],
-                ["Booking", "/booking"],
-                ["About Us", "/about"],
-                ["Contact", "/contact"],
+                ["Algemene Voorwaarden ", "/algemene-voorwaarden"],
+                ["Privacy Policy", "/privacy"],
               ].map(([title, url]) => (
                 <li key={url}>
                   <Link href={url} className="text-muted-foreground hover:text-foreground transition-colors">
@@ -94,7 +91,6 @@ export function Footer() {
               <Link href="https://jochemwhite.nl" target="_blank" className="hover:text-foreground transition-colors">
                 Made by Jochemwhite.nl
               </Link>
-     
             </div>
           </div>
         </div>
