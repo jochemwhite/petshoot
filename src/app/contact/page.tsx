@@ -1,45 +1,40 @@
-"use client";
+import ContactForm from "@/components/forms/contact-form";
+import { Mail, MapPin, MessageSquare, Phone } from "lucide-react";
 
-import { useState } from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
-import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send, MessageSquare } from "lucide-react";
-
-const formSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email address"),
-  subject: z.string().min(5, "Subject must be at least 5 characters"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-});
+export const metadata = {
+  title: "Contacteer Huisdierfotograaf in Zeewolde | Vragen? Neem Contact Op | Petshoot",
+  description:
+    "Neem eenvoudig contact op met Petshoot voor vragen over huisdierfotografie in Zeewolde, Flevoland.  Bereik ons via telefoon, email of contactformulier.",
+  keywords: [
+    "contact huisdierfotograaf Zeewolde",
+    "contactgegevens dierfotograaf",
+    "telefoonnummer dierfotograaf",
+    "email adres dierfotograaf",
+    "contactformulier huisdierfotografie",
+    "adres dierfotograaf Zeewolde", // If you list an address
+    "bereikbaarheid dierfotograaf",
+    "vragen over huisdierfotografie",
+  ],
+  openGraph: {
+    title: "Contacteer Huisdierfotograaf in Zeewolde | Vragen? Neem Contact Op | Petshoot",
+    description:
+      "Neem eenvoudig contact op met Petshoot voor vragen over huisdierfotografie in Zeewolde, Flevoland.  Bereik ons via telefoon, email of contactformulier.",
+    locale: "nl_NL",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contacteer Huisdierfotograaf in Zeewolde | Vragen? Neem Contact Op | Petshoot",
+    description:
+      "Neem eenvoudig contact op met Petshoot voor vragen over huisdierfotografie in Zeewolde, Flevoland.  Bereik ons via telefoon, email of contactformulier.",
+  },
+  robots: {
+    index: false, // Could be true, but contact pages are often less critical to index directly. User usually navigates here directly.
+    follow: true,
+  },
+};
 
 export default function ContactPage() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    },
-  });
-
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
-
-
-    form.reset();
-  }
-
   return (
     <div className="min-h-screen pt-24 pb-16">
       <div className="container mx-auto px-6">
@@ -47,8 +42,8 @@ export default function ContactPage() {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold mb-4">Get in Touch</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have questions about our services or want to schedule a session? We&pos;d love to hear from you! Fill out the form below or use our contact
-            information to reach us directly.
+            Have questions about our services or want to schedule a session? We&pos;d love to hear from you! Fill out the form below or use our
+            contact information to reach us directly.
           </p>
         </div>
 
@@ -116,66 +111,8 @@ export default function ContactPage() {
               <MessageSquare className="w-6 h-6" />
               Send us a Message
             </h2>
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Name</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Your name" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <FormControl>
-                        <Input placeholder="your@email.com" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="subject"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Subject</FormLabel>
-                      <FormControl>
-                        <Input placeholder="What's this about?" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Message</FormLabel>
-                      <FormControl>
-                        <Textarea placeholder="Your message..." className="min-h-[150px]" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <Button type="submit" className="w-full" disabled={isSubmitting}>
-                  <Send className="w-4 h-4 mr-2" />
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </Button>
-              </form>
-            </Form>
+
+            <ContactForm />
           </div>
         </div>
       </div>

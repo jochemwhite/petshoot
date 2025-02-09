@@ -1,6 +1,38 @@
 import { NumberTicker } from "@/components/number-ticker";
 import CallToAction from "@/components/sections/cta";
 import { Award, Camera, Heart, Star } from "lucide-react";
+import { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+  title: 'Over Petshoot | Gepassioneerde Huisdierfotografie in Zeewolde | Petshoot',
+  description: 'Leer meer over Petshoot en onze passie voor huisdierenfotografie in Zeewolde, Flevoland.  Persoonlijke & professionele dierportretten.',
+  keywords: [
+    'over ons huisdierfotografie',
+    'Petshoot', // Important for brand search
+    'dierfotograaf Zeewolde achtergrond',
+    'missie huisdierfotografie bedrijf',
+    'passie voor dieren fotografie',
+    'persoonlijke dierportretten',
+    'professionele aanpak dierfotografie',
+    'verhaal achter huisdierfotograaf'
+  ],
+  openGraph: {
+    title: 'Over Petshoot | Gepassioneerde Huisdierfotografie in Zeewolde | Petshoot',
+    description: 'Leer meer over Petshoot en onze passie voor huisdierenfotografie in Zeewolde, Flevoland.  Persoonlijke & professionele dierportretten.',
+    locale: 'nl_NL',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Over Petshoot | Gepassioneerde Huisdierfotografie in Zeewolde | Petshoot',
+    description: 'Leer meer over Petshoot en onze passie voor huisdierenfotografie in Zeewolde, Flevoland.  Persoonlijke & professionele dierportretten.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function Page() {
   return (
