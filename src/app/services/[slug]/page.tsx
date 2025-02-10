@@ -18,6 +18,7 @@ interface Service {
   includes: ServiceInclude[];
   gallery: string[];
   longDescription: string;
+  descriptionImage: string;
 }
 
 interface ServiceInclude {
@@ -29,8 +30,8 @@ interface ServiceInclude {
 // Moved services data to a separate constant
 const SERVICES: Record<string, Service> = {
   "thuis-shoot": {
-    title: "Studio Sessions",
-    description: "Professional pet photography in our state-of-the-art studio",
+    title: "Thuis shoots",
+    description: "Professional pet photography in your own home",
     longDescription: `Make your pet's special occasions truly memorable with our dedicated event photography service. Whether it's a birthday celebration, adoption anniversary, or any other milestone, we're here to document every tail wag and happy moment.
 
 Our special events coverage goes beyond just taking pictures – we help create an atmosphere that's both photo-worthy and enjoyable for all pets involved. We understand the unique challenges of photographing multiple pets and can handle group dynamics with ease.
@@ -38,9 +39,10 @@ Our special events coverage goes beyond just taking pictures – we help create 
 We work closely with you to plan the perfect setup, including themed decorations and props that match your vision. Our experience in event photography means we know exactly how to capture both the big moments and the small, candid interactions that make these celebrations special.
 
 From intimate gatherings to large pet parties, we ensure every special moment is preserved in beautiful detail. We can also provide same-day previews of selected shots so you can share the joy immediately with friends and family.`,
+    descriptionImage: "/img/cats/cat13.jpg",
     price: "from $299",
     duration: "1-2 hours",
-    coverImage: "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e",
+    coverImage: "/img/cats/cat11.jpg",
     features: [
       "Professional lighting setup",
       "Multiple backdrop options",
@@ -71,15 +73,11 @@ From intimate gatherings to large pet parties, we ensure every special moment is
         description: "Up to 2 pets per session",
       },
     ],
-    gallery: [
-      "/img/cats/cat13.jpg",
-      "/img/cats/cat11.jpg",
-      "/img/cats/cat14.jpg",
-    ],
+    gallery: ["/img/cats/cat13.jpg", "/img/cats/cat11.jpg", "/img/cats/cat14.jpg"],
   },
   "buiten-shoot": {
-    title: "Studio Sessions",
-    description: "Professional pet photography in our state-of-the-art studio",
+    title: "Buiten Shoots",
+    description: "Professional pet photography in our the out door",
     longDescription: `Make your pet's special occasions truly memorable with our dedicated event photography service. Whether it's a birthday celebration, adoption anniversary, or any other milestone, we're here to document every tail wag and happy moment.
 
     Our special events coverage goes beyond just taking pictures – we help create an atmosphere that's both photo-worthy and enjoyable for all pets involved. We understand the unique challenges of photographing multiple pets and can handle group dynamics with ease.
@@ -87,9 +85,10 @@ From intimate gatherings to large pet parties, we ensure every special moment is
     We work closely with you to plan the perfect setup, including themed decorations and props that match your vision. Our experience in event photography means we know exactly how to capture both the big moments and the small, candid interactions that make these celebrations special.
     
     From intimate gatherings to large pet parties, we ensure every special moment is preserved in beautiful detail. We can also provide same-day previews of selected shots so you can share the joy immediately with friends and family.`,
+    descriptionImage: "/img/dogs/dog8.jpg",
     price: "from $299",
     duration: "1-2 hours",
-    coverImage: "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e",
+    coverImage: "/img/dogs/dog4.jpg",
     features: [
       "Professional lighting setup",
       "Multiple backdrop options",
@@ -120,11 +119,7 @@ From intimate gatherings to large pet parties, we ensure every special moment is
         description: "Up to 2 pets per session",
       },
     ],
-    gallery: [
-      "/img/cats/cat5.jpg",
-      "/img/dogs/dog2.jpg",
-      "/img/horses/horse1.jpeg",
-    ],
+    gallery: ["/img/cats/cat5.jpg", "/img/dogs/dog2.jpg", "/img/horses/horse1.jpeg"],
   },
 };
 
@@ -212,8 +207,8 @@ export default function ServicePage() {
           <div className="flex-1 flex justify-center ">
             <div className="overflow-hidden rounded-lg">
               <Image
-                src="/img/dogs/dog1.jpg"
-                alt="cat"
+                src={service.descriptionImage}
+                alt={service.title}
                 width={500}
                 height={500}
                 className="hover:scale-110 transition-transform duration-300 rounded-lg overflow-hidden shadow-lg relative"
