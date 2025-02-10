@@ -39,10 +39,10 @@ export default function Page() {
   return (
     <div className="min-h-screen pt-24 pb-16">
       {/* Hero Section */}
-      <section className="relative h-[50vh] mb-16">
+      <section className="relative h-[40vh] mb-16">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1587764379873-97837921fd44"
+            src="/img/cats/cat9.jpg"
             alt="Pet photographer at work"
             className="w-full h-full object-cover"
             fill
@@ -74,11 +74,12 @@ export default function Page() {
       <section className="bg-muted py-24">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="bg-background rounded-xl overflow-hidden shadow-lg">
+            <div className="bg-background relative rounded-xl overflow-hidden shadow-lg">
               <Image
                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
                 alt="Sarah Johnson"
                 className="w-full h-96 object-cover object-center"
+                fill
               />
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Sarah Johnson</h3>

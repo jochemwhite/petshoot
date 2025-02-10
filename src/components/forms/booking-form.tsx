@@ -1,5 +1,12 @@
 "use client";
 
+import React from "react"; // Import React
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { BookingFormSchema, BookingFormSchemaType } from "@/schemas/booking-schema";
+import { sendBookingEmail } from "@/actions/send_email"; // Import the server action
+import { useTransition } from "react"; // Import useTransition for pending state
+
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,32 +16,10 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { format } from "date-fns";
 import { Calendar as CalendarIcon, Package } from "lucide-react";
 import { useCallback, useState } from "react";
-import { useForm } from "react-hook-form";
 import * as z from "zod";
-
-
-
-
-// --- Zod Schema (Combined) ---
-const formSchema = z.object({
-  package: z.string().min(1, "Please select a package"),
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email address"),
-  phone: z.string().min(10, "Please enter a valid phone number"),
-  petName: z.string().min(1, "Pet name is required"),
-  petType: z.string().min(1, "Pet type is required"),
-  date: z.date({
-    required_error: "Please select a date",
-  }),
-  time: z.string().min(1, "Please select a time"),
-  specialRequests: z.string().optional(),
-});
-
-type FormValues = z.infer<typeof formSchema>;
 
 // --- Data ---
 const packages = [
@@ -292,8 +277,13 @@ export default function BookingForm() {
   const [step, setStep] = useState(1);
   const totalSteps = 3;
 
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
+  // --- New State Variables for Submission Handling ---
+  const [isPending, startTransition] = useTransition();
+  const [submissionError, setSubmissionError] = React.useState<string | null>(null);
+  const [submissionSuccess, setSubmissionSuccess] = React.useState<boolean>(false);
+
+  const form = useForm<BookingFormSchemaType>({
+    resolver: zodResolver(BookingFormSchema),
     defaultValues: {
       name: "",
       email: "",
@@ -308,7 +298,7 @@ export default function BookingForm() {
   });
 
   const handleNext = async () => {
-    let fieldsToValidate: (keyof FormValues)[] = [];
+    let fieldsToValidate: (keyof BookingFormSchemaType)[] = [];
     switch (step) {
       case 1:
         fieldsToValidate = ["package"];
@@ -336,10 +326,23 @@ export default function BookingForm() {
     setStep((prevStep) => Math.max(prevStep - 1, 1));
   };
 
-  const onSubmit = async (values: FormValues) => {
-    // Ensure final step fields are also valid before submission
-    console.log("Final submission values:", values);
-    alert("Booking submitted successfully! We'll contact you shortly to confirm your appointment.");
+  // --- Updated onSubmit Function (Calls Server Action) ---
+  const onSubmit = async (values: BookingFormSchemaType) => {
+    setSubmissionError(null); // Reset error on new submission
+    setSubmissionSuccess(false);
+
+    startTransition(async () => {
+      const result = await sendBookingEmail(values); // Call the server action
+
+      if (result && "error" in result) {
+        console.error("Email sending error:", result.error, result.issues); // Log detailed issues if available
+        setSubmissionError(result.error ? result.error : "Unknown Error");
+        setSubmissionSuccess(false);
+      } else if (result && "success" in result && result.success) {
+        setSubmissionSuccess(true);
+        form.reset(); // Clear the form on success
+      }
+    });
   };
 
   return (
@@ -375,6 +378,12 @@ export default function BookingForm() {
             </div>
           </div>
 
+          {/* --- Display Success and Error Messages --- */}
+          {submissionSuccess && <p style={{ color: "green" }}>Boekingsaanvraag succesvol verzonden! We nemen spoedig contact met u op.</p>}
+          {submissionError && (
+            <p style={{ color: "red" }}>Fout bij het versturen van de boeking: {submissionError}. Probeer het alstublieft opnieuw.</p>
+          )}
+
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit, (e) => console.log(e))} className="space-y-8">
               {step === 1 && <PackageSelection form={form} />}
@@ -393,13 +402,11 @@ export default function BookingForm() {
                   </Button>
                 ) : (
                   <Button
-                    type="button"
+                    type="submit" // Change button type to 'submit' to trigger form submission
                     className="ml-auto"
-                    onClick={form.handleSubmit(onSubmit, (e) => {
-                      console.log(e);
-                    })}
+                    disabled={isPending} // Disable button when submitting
                   >
-                    Complete Booking
+                    {isPending ? "Verzenden..." : "Complete Booking"} {/* Show "Verzenden..." when pending */}
                   </Button>
                 )}
               </div>

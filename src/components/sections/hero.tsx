@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-[100vh]">
       <div className="absolute inset-0">
-        <Image src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e" alt="Hero pet" className="w-full h-full object-cover" fill priority />
+        <Image src="/img/dogs/dog1.jpg" alt="Hero pet" className="w-full h-full object-cover" fill priority />
         <div className="absolute inset-0 bg-black/40" />
       </div>
 

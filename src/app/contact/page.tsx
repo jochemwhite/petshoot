@@ -101,8 +101,8 @@ export default function ContactPage() {
             </div>
 
             {/* Map Placeholder */}
-            <div className="aspect-video bg-muted rounded-lg overflow-hidden">
-              <Image src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1" alt="Studio location" className="w-full h-full object-cover" fill />
+            <div className="aspect-video bg-muted rounded-lg overflow-hidden relative">
+              <Image src="/img/cats/cat5.jpg" alt="Studio location" className="w-full h-full object-cover" fill />
             </div>
           </div>
 

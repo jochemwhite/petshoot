@@ -6,68 +6,183 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 const portfolioItems = [
+  // Dogs
   {
     id: 1,
-    title: "Playful Golden Retriever",
+    title: "Lorem ipsum dolor sit",
     category: "Dogs",
-    image: "https://images.unsplash.com/photo-1552053831-71594a27632d",
-    description: "A joyful golden retriever playing in the park",
+    image: "/img/dogs/dog1.jpg",
+    description: "Lorem ipsum dolor sit",
   },
   {
     id: 2,
-    title: "Majestic Persian Cat",
-    category: "Cats",
-    image: "https://images.unsplash.com/photo-1574158622682-e40e69881006",
-    description: "An elegant Persian cat posing in studio lighting",
+    title: "Lorem ipsum dolor sit",
+    category: "Dogs",
+    image: "/img/dogs/dog2.jpg",
+    description: "Lorem ipsum dolor sit",
   },
   {
     id: 3,
-    title: "Energetic Border Collie",
+    title: "Lorem ipsum dolor sit",
     category: "Dogs",
-    image: "https://images.unsplash.com/photo-1503256207526-0d5d80fa2f47",
-    description: "A border collie mid-jump during an agility session",
+    image: "/img/dogs/dog3.jpg",
+    description: "Lorem ipsum dolor sit",
   },
   {
     id: 4,
-    title: "Curious Tabby",
-    category: "Cats",
-    image: "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13",
-    description: "A tabby cat exploring its surroundings",
+    title: "Lorem ipsum dolor sit",
+    category: "Dogs",
+    image: "/img/dogs/dog4.jpg",
+    description: "Lorem ipsum dolor sit",
   },
   {
     id: 5,
-    title: "Gentle Giant",
+    title: "Lorem ipsum dolor sit",
     category: "Dogs",
-    image: "https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48",
-    description: "A Great Dane showing its gentle nature",
+    image: "/img/dogs/dog5.jpg",
+    description: "Lorem ipsum dolor sit",
   },
   {
     id: 6,
-    title: "Siamese Beauty",
-    category: "Cats",
-    image: "https://images.unsplash.com/photo-1533738363-b7f9aef128ce",
-    description: "A Siamese cat in a natural window light setting",
+    title: "Lorem ipsum dolor sit",
+    category: "Dogs",
+    image: "/img/dogs/dog6.jpg",
+    description: "Lorem ipsum dolor sit",
   },
   {
     id: 7,
-    title: "Puppy Love",
+    title: "Lorem ipsum dolor sit",
     category: "Dogs",
-    image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b",
-    description: "Two puppies sharing a heartwarming moment",
+    image: "/img/dogs/dog7.jpg",
+    description: "Lorem ipsum dolor sit",
   },
   {
     id: 8,
-    title: "Regal Maine Coon",
-    category: "Cats",
-    image: "https://images.unsplash.com/photo-1533743983669-94fa5c4338ec",
-    description: "A majestic Maine Coon cat in studio portraiture",
+    title: "Lorem ipsum dolor sit",
+    category: "Dogs",
+    image: "/img/dogs/dog8.jpg",
+    description: "Lorem ipsum dolor sit",
   },
+
+  // Cats (unique IDs continue after dogs)
   {
     id: 9,
-    title: "Action Shot",
-    category: "Dogs",
-    image: "https://images.unsplash.com/photo-1536809188428-e8ecf663d0be",
-    description: "High-speed photography of a dog catching a frisbee",
+    title: "Lorem ipsum dolor sit",
+    category: "Cats",
+    image: "/img/cats/cat1.jpg",
+    description: "Lorem ipsum dolor sit",
+  },
+  {
+    id: 10,
+    title: "Lorem ipsum dolor sit",
+    category: "Cats",
+    image: "/img/cats/cat2.jpg",
+    description: "Lorem ipsum dolor sit",
+  },
+  {
+    id: 11,
+    title: "Lorem ipsum dolor sit",
+    category: "Cats",
+    image: "/img/cats/cat3.jpg",
+    description: "Lorem ipsum dolor sit",
+  },
+  {
+    id: 12,
+    title: "Lorem ipsum dolor sit",
+    category: "Cats",
+    image: "/img/cats/cat4.jpg",
+    description: "Lorem ipsum dolor sit",
+  },
+  {
+    id: 13,
+    title: "Lorem ipsum dolor sit",
+    category: "Cats",
+    image: "/img/cats/cat5.jpg",
+    description: "Lorem ipsum dolor sit",
+  },
+  {
+    id: 14,
+    title: "Lorem ipsum dolor sit",
+    category: "Cats",
+    image: "/img/cats/cat6.jpg",
+    description: "Lorem ipsum dolor sit",
+  },
+  {
+    id: 15,
+    title: "Lorem ipsum dolor sit",
+    category: "Cats",
+    image: "/img/cats/cat7.jpg",
+    description: "Lorem ipsum dolor sit",
+  },
+  {
+    id: 16,
+    title: "Lorem ipsum dolor sit",
+    category: "Cats",
+    image: "/img/cats/cat8.jpg",
+    description: "Lorem ipsum dolor sit",
+  },
+  {
+    id: 17,
+    title: "Lorem ipsum dolor sit",
+    category: "Cats",
+    image: "/img/cats/cat9.jpg",
+    description: "Lorem ipsum dolor sit",
+  },
+  {
+    id: 18,
+    title: "Lorem ipsum dolor sit",
+    category: "Cats",
+    image: "/img/cats/cat10.jpg",
+    description: "Lorem ipsum dolor sit",
+  },
+  {
+    id: 19,
+    title: "Lorem ipsum dolor sit",
+    category: "Cats",
+    image: "/img/cats/cat11.jpg",
+    description: "Lorem ipsum dolor sit",
+  },
+  {
+    id: 20,
+    title: "Lorem ipsum dolor sit",
+    category: "Cats",
+    image: "/img/cats/cat12.jpg",
+    description: "Lorem ipsum dolor sit",
+  },
+  {
+    id: 21,
+    title: "Lorem ipsum dolor sit",
+    category: "Cats",
+    image: "/img/cats/cat13.jpg",
+    description: "Lorem ipsum dolor sit",
+  },
+  {
+    id: 22,
+    title: "Lorem ipsum dolor sit",
+    category: "Cats",
+    image: "/img/cats/cat14.jpg",
+    description: "Lorem ipsum dolor sit",
+  },
+  {
+    id: 23,
+    title: "Lorem ipsum dolor sit",
+    category: "Birds",
+    image: "/img/birds/bird1.jpg",
+    description: "Lorem ipsum dolor sit",
+  },
+  {
+    id: 24,
+    title: "Lorem ipsum dolor sit",
+    category: "Horses",
+    image: "/img/horses/horse1.jpeg",
+    description: "Lorem ipsum dolor sit",
+  },
+  {
+    id: 25,
+    title: "Lorem ipsum dolor sit",
+    category: "Horses",
+    image: "/img/horses/horse2.jpg",
+    description: "Lorem ipsum dolor sit",
   },
 ];
 
@@ -102,7 +217,12 @@ export default function Portfolio() {
             className="group relative aspect-square overflow-hidden rounded-lg cursor-pointer"
             onClick={() => setSelectedImage(item)}
           >
-            <Image src={item.image} alt={item.title} className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110" fill />
+            <Image
+              src={item.image}
+              alt={item.title}
+              className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
+              fill
+            />
             <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-6">
               <Camera className="w-8 h-8 mb-4" />
               <h3 className="text-xl font-semibold text-center mb-2">{item.title}</h3>
