@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Camera, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { packages } from "@/lib/const";
 
 export function Footer() {
   return (
@@ -44,10 +45,10 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Services</h3>
             <ul className="space-y-3">
-              {["Studio Sessions", "Outdoor Photography", "Pet Portraits", "Family Sessions", "Special Events"].map((service) => (
-                <li key={service}>
-                  <Link href="/booking" className="text-muted-foreground hover:text-foreground transition-colors">
-                    {service}
+              {packages.map((service) => (
+                <li key={service.href}>
+                  <Link href={`/services/${service.href}`} className="text-muted-foreground hover:text-foreground transition-colors">
+                    {service.name}
                   </Link>
                 </li>
               ))}
@@ -58,12 +59,6 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-3">
-              <li>
-                <a href="tel:+1234567890" className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
-                  <Phone className="h-4 w-4 mr-2" />
-                  (123) 456-7890
-                </a>
-              </li>
               <li>
                 <a href="mailto:info@petshoot.nl" className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
                   <Mail className="h-4 w-4 mr-2" />

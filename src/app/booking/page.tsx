@@ -2,7 +2,7 @@ import BookingForm from "@/components/forms/booking-form";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Boek Jouw Huisdier Fotosessie in Zeewolde | Reserveer Nu | [Naam van je Website]",
+  title: "Boek Jouw Huisdier Fotosessie in Zeewolde | Reserveer Nu | Petshoot",
   description:
     "Plan eenvoudig een fotoshoot voor jouw huisdier in Zeewolde, Flevoland. Beschikbaarheid bekijken & direct boeken.  Onvergetelijke huisdierfoto’s!",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "contact voor boeking dierfotografie",
   ],
   openGraph: {
-    title: "Boek Jouw Huisdier Fotosessie in Zeewolde | Reserveer Nu | [Naam van je Website]",
+    title: "Boek Jouw Huisdier Fotosessie in Zeewolde | Reserveer Nu | Petshoot",
     description:
       "Plan eenvoudig een fotoshoot voor jouw huisdier in Zeewolde, Flevoland. Beschikbaarheid bekijken & direct boeken.  Onvergetelijke huisdierfoto’s!",
     locale: "nl_NL",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Boek Jouw Huisdier Fotosessie in Zeewolde | Reserveer Nu | [Naam van je Website]",
+    title: "Boek Jouw Huisdier Fotosessie in Zeewolde | Reserveer Nu | Petshoot",
     description:
       "Plan eenvoudig een fotoshoot voor jouw huisdier in Zeewolde, Flevoland. Beschikbaarheid bekijken & direct boeken.  Onvergetelijke huisdierfoto’s!",
   },

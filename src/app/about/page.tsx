@@ -4,30 +4,32 @@ import { Award, Camera, Heart, Star } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 
-
 export const metadata: Metadata = {
-  title: 'Over Petshoot | Gepassioneerde Huisdierfotografie in Zeewolde | Petshoot',
-  description: 'Leer meer over Petshoot en onze passie voor huisdierenfotografie in Zeewolde, Flevoland.  Persoonlijke & professionele dierportretten.',
+  title: "Over Petshoot | Gepassioneerde Huisdierfotografie in Zeewolde | Petshoot",
+  description:
+    "Leer meer over Petshoot en onze passie voor huisdierenfotografie in Zeewolde, Flevoland.  Persoonlijke & professionele dierportretten.",
   keywords: [
-    'over ons huisdierfotografie',
-    'Petshoot', // Important for brand search
-    'dierfotograaf Zeewolde achtergrond',
-    'missie huisdierfotografie bedrijf',
-    'passie voor dieren fotografie',
-    'persoonlijke dierportretten',
-    'professionele aanpak dierfotografie',
-    'verhaal achter huisdierfotograaf'
+    "over ons huisdierfotografie",
+    "Petshoot", 
+        "dierfotograaf Zeewolde achtergrond",
+    "missie huisdierfotografie bedrijf",
+    "passie voor dieren fotografie",
+    "persoonlijke dierportretten",
+    "professionele aanpak dierfotografie",
+    "verhaal achter huisdierfotograaf",
   ],
   openGraph: {
-    title: 'Over Petshoot | Gepassioneerde Huisdierfotografie in Zeewolde | Petshoot',
-    description: 'Leer meer over Petshoot en onze passie voor huisdierenfotografie in Zeewolde, Flevoland.  Persoonlijke & professionele dierportretten.',
-    locale: 'nl_NL',
-    type: 'website',
+    title: "Over Petshoot | Gepassioneerde Huisdierfotografie in Zeewolde | Petshoot",
+    description:
+      "Leer meer over Petshoot en onze passie voor huisdierenfotografie in Zeewolde, Flevoland.  Persoonlijke & professionele dierportretten.",
+    locale: "nl_NL",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Over Petshoot | Gepassioneerde Huisdierfotografie in Zeewolde | Petshoot',
-    description: 'Leer meer over Petshoot en onze passie voor huisdierenfotografie in Zeewolde, Flevoland.  Persoonlijke & professionele dierportretten.',
+    card: "summary_large_image",
+    title: "Over Petshoot | Gepassioneerde Huisdierfotografie in Zeewolde | Petshoot",
+    description:
+      "Leer meer over Petshoot en onze passie voor huisdierenfotografie in Zeewolde, Flevoland.  Persoonlijke & professionele dierportretten.",
   },
   robots: {
     index: true,
@@ -37,16 +39,11 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <div className="min-h-screen pt-16 pb-16">
       {/* Hero Section */}
       <section className="relative h-[40vh] mb-16">
         <div className="absolute inset-0">
-          <Image
-            src="/img/cats/cat9.jpg"
-            alt="Pet photographer at work"
-            className="w-full h-full object-cover"
-            fill
-          />
+          <Image src="/img/cats/cat9.jpg" alt="Pet photographer at work" className="w-full h-full object-cover" fill />
           <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="relative h-full flex items-center justify-center text-center px-4">
@@ -74,21 +71,7 @@ export default function Page() {
       <section className="bg-muted py-24">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="bg-background relative rounded-xl overflow-hidden shadow-lg">
-              <Image
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
-                alt="Sarah Johnson"
-                className="w-full h-96 object-cover object-center"
-                fill
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Sarah Johnson</h3>
-                <p className="text-primary font-medium mb-4">Photographer</p>
-                <p className="text-muted-foreground">
-                  With over 10 years of experience in pet photography, Sarah has a special way with animals that brings out their best.
-                </p>
-              </div>
-            </div>
+            <Image src="/Jennita.jpg" alt="Jennita Nieuwenhuis" className="object-cover object-center mx-auto rounded-xl shadow-2xl " width={500} height={500} />
 
             <div>
               <h2 className="text-3xl font-bold text-center mb-16">About me</h2>
@@ -121,7 +104,7 @@ export default function Page() {
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <stat.icon className="w-8 h-8 mx-auto mb-4 text-primary" />
-                <NumberTicker value={+stat.value} className="text-3xl font-bold mb-2"  />
+                <NumberTicker value={+stat.value} className="text-3xl font-bold mb-2" />
                 <div className="text-muted-foreground">{stat.label}</div>
               </div>
             ))}

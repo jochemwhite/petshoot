@@ -20,39 +20,10 @@ import { format } from "date-fns";
 import { Calendar as CalendarIcon, Package } from "lucide-react";
 import { useCallback, useState } from "react";
 import * as z from "zod";
+import { packages } from "@/lib/const";
 
-// --- Data ---
-const packages = [
-  {
-    id: "basic",
-    name: "Essential Package",
-    price: "$299",
-    description: "Perfect for capturing your pet's personality",
-    features: ["1-hour photo session", "5 digital photos", "1 printed 8x10 photo", "Online gallery"],
-  },
-  {
-    id: "premium",
-    name: "Premium Package",
-    price: "$499",
-    description: "Comprehensive photo session with more options",
-    features: ["2-hour photo session", "15 digital photos", "3 printed 8x10 photos", "Online gallery", "Basic retouching", "Multiple outfit changes"],
-  },
-  {
-    id: "ultimate",
-    name: "Ultimate Experience",
-    price: "$799",
-    description: "The complete pet photography experience",
-    features: [
-      "3-hour photo session",
-      "30 digital photos",
-      "5 printed 8x10 photos",
-      "Custom photo album",
-      "Advanced retouching",
-      "Multiple locations",
-      "Props included",
-    ],
-  },
-];
+
+
 
 const timeSlots = ["09:00 AM", "10:00 AM", "11:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "04:00 PM"];
 
@@ -96,9 +67,9 @@ const PackageSelection = ({ form }: { form: any }) => {
               <CardTitle>
                 <div className="flex justify-between items-start">
                   <span>{pkg.name}</span>
-                  <Package className="h-5 w-5 text-primary" />
+                  <pkg.icon className="h-5 w-5 text-primary" />
                 </div>
-                <div className="text-2xl font-bold mt-2">{pkg.price}</div>
+                <div className="text-2xl font-bold mt-2">€{pkg.price}</div>
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -346,7 +317,7 @@ export default function BookingForm() {
   };
 
   return (
-    <div className=" pt-24 pb-16">
+    <div className="pt-24 pb-16">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
