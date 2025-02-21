@@ -11,8 +11,8 @@ import { ServiceInclude, Package as TPackage } from "@/types";
 
 // Sub-components
 const HeroSection = ({ service }: { service: TPackage }) => (
-  <section className="relative mb-16 h-[50vh]">
-    <Image src={service.about_img.href} alt={service.about_img.alt} fill className="object-cover" priority />
+  <section className="relative mb-16  h-[65vh]">
+    <Image src={service.banner ? service.banner.href : service.about_img.href} alt={service.about_img.alt} fill className="object-cover" priority />
     <div className="absolute inset-0 bg-black/50" />
     <div className="relative h-full flex items-center justify-center text-center px-4">
       <div className="max-w-3xl">
@@ -66,7 +66,7 @@ export default function ServicePage() {
 
   if (!service) {
     return (
-      <div className="min-h-screen pt-24 pb-16 flex items-center justify-center">
+      <div className="min-h-screen  pb-16 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Service Not Found</h1>
           <p className="text-muted-foreground mb-8">The service you're looking for doesn't exist.</p>
@@ -86,9 +86,9 @@ export default function ServicePage() {
         {/* Quick Info */}
         <section className="mb-24">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <InfoCard icon={service.icon} title="Pakket Prijs" value={`€${service.price}`} />
+            <InfoCard icon={service.icon} title="Pakketprijs" value={`€${service.price}`} />
             <InfoCard icon={Clock} title="Sessieduur" value={"1 uur"} />
-            <InfoCard icon={Calendar} title="Availability" value="Book nu" />
+            <InfoCard icon={Calendar} title="Beschikbaarheid" value="Boek nu" />
           </div>
         </section>
 
@@ -120,7 +120,7 @@ export default function ServicePage() {
 
         {/* What's Included */}
         <section className="mb-24">
-          <h2 className="text-3xl font-bold text-center mb-12">Wat Is Inbegrepen</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Wat is inbegrepen </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {service.includes.map((item, index) => (
               <ServiceIncludeItem key={`${item.title}-${index}`} item={item} />
@@ -140,7 +140,7 @@ export default function ServicePage() {
 
         {/* Gallery */}
         <section className="mb-24">
-          <h2 className="text-3xl font-bold text-center mb-12">Gallery</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Galerij</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {service.gallery.map((image, index) => (
               <GalleryImage key={index} src={image.href} alt={image.alt} />

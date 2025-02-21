@@ -41,10 +41,10 @@ export default function PortfolioPage() {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Our Portfolio</h1>
+          <h1 className="text-4xl font-bold mb-4 italic">Een kijkje in mijn wereld van snuitjes, staartjes en pootjes</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Explore our collection of pet portraits, capturing the unique personality and charm of each furry friend we&apos;ve had the pleasure to
-            photograph.
+            Bekijk hier hoe ik de persoonlijkheid van elk dier vastleg. Van stoere honden in de regen tot chille katten op de bank. Zie je jouw
+            huisdier hier al tussen staan?
           </p>
         </div>
 

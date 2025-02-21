@@ -10,8 +10,8 @@ export const metadata: Metadata = {
     "Leer meer over Petshoot en onze passie voor huisdierenfotografie in Zeewolde, Flevoland.  Persoonlijke & professionele dierportretten.",
   keywords: [
     "over ons huisdierfotografie",
-    "Petshoot", 
-        "dierfotograaf Zeewolde achtergrond",
+    "Petshoot",
+    "dierfotograaf Zeewolde achtergrond",
     "missie huisdierfotografie bedrijf",
     "passie voor dieren fotografie",
     "persoonlijke dierportretten",
@@ -48,8 +48,10 @@ export default function Page() {
         </div>
         <div className="relative h-full flex items-center justify-center text-center px-4">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Our Story</h1>
-            <p className="text-xl text-white/90">Capturing precious moments between pets and their families since 2015</p>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Over mij</h1>
+            <p className="text-xl text-white/90 italic">
+              De kunst van het vastleggen zit in de details: elk kwispelend staartje, elke nieuwsgierige blik{" "}
+            </p>
           </div>
         </div>
       </section>
@@ -58,11 +60,10 @@ export default function Page() {
       <section className="container mx-auto px-6 mb-24">
         <div className="max-w-3xl mx-auto text-center">
           <Camera className="w-12 h-12 mx-auto mb-6 text-primary" />
-          <h2 className="text-3xl font-bold mb-6">My Mission</h2>
+          <h2 className="text-3xl font-bold mb-6">Mijn Missie</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            At Pawfect Shots, we believe every pet has a unique personality that deserves to be captured and celebrated. Our mission is to create
-            timeless, emotional photographs that showcase the special bond between pets and their families, providing lasting memories for generations
-            to come.
+            Bij Petshoot draait het niet om perfecte poses, maar om de échte momenten die jouw band met je huisdier uniek maken. Of we nu bij jou
+            thuis, bij mij in de studio of buiten fotograferen: mijn doel is om die spontaniteit en emotie te vangen, precies zoals ze gebeuren. .
           </p>
         </div>
       </section>
@@ -71,21 +72,28 @@ export default function Page() {
       <section className="bg-muted py-24">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <Image src="/Jennita.jpg" alt="Jennita Nieuwenhuis" className="object-cover object-center mx-auto rounded-xl shadow-2xl " width={500} height={500} />
+            <Image
+              src="/Jennita.jpg"
+              alt="Jennita Nieuwenhuis"
+              className="object-cover object-center mx-auto rounded-xl shadow-2xl "
+              width={500}
+              height={500}
+            />
 
             <div>
-              <h2 className="text-3xl font-bold text-center mb-16">About me</h2>
+              <h2 className="text-3xl font-bold text-center mb-16">Over mij</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique molestias, quam itaque ratione, eos nulla rerum ex animi fuga quia
-                modi accusantium beatae! Nostrum perferendis, dolorum porro vero sit vel?
+                Mijn naam is Jennita Nieuwenhuis, oprichter van Petshoot. Als huisdierliefhebber en fotograaf combineer ik mijn twee grootste passies:
+                dieren en het vastleggen van hun karakter. Of het nu gaat om foto’s bij mij in de studio, bij jou thuis of op een door jou gekozen
+                locatie in de natuur.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed py-2">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae vero accusantium hic corrupti quibusdam tempora voluptatem facere nisi
                 fugiat. Consectetur ea earum officiis pariatur eaque alias quasi, et eveniet iste.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem dicta soluta, voluptate natus doloremque nisi animi eaque minus
-                deserunt odio reprehenderit saepe, ut iusto, praesentium eveniet aliquam maiores tempore. Totam!
+                Waarom ik dit doe? Omdat huisdieren niet "gewoon dieren" zijn. Het zijn familieleden. Ze verdienen herinneringen die net zo levendig
+                zijn als zijzelf.
               </p>
             </div>
           </div>
@@ -93,12 +101,12 @@ export default function Page() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-24">
+      {/* <section className="py-24">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { icon: Camera, label: "Photos Taken", value: "500" },
-              { icon: Heart, label: "Happy Clients", value: "300" },
+              { icon: Camera, label: "Foto's gemaakt", value: "500" },
+              { icon: Heart, label: "", value: "300" },
               { icon: Award, label: "Awards Won", value: "15" },
               { icon: Star, label: "5-Star Reviews", value: "500" },
             ].map((stat) => (
@@ -110,7 +118,7 @@ export default function Page() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <CallToAction />

@@ -12,6 +12,7 @@ export interface Package {
   about_img: img
   gallery: img[]
   includes: ServiceInclude[];
+  banner?: img;
 }
 
 interface img {

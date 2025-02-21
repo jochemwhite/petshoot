@@ -1,16 +1,16 @@
 import { z } from "zod";
 
 export const BookingFormSchema = z.object({
-  package: z.string().min(1, "Please select a package"),
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email address"),
-  phone: z.string().min(10, "Please enter a valid phone number"),
-  petName: z.string().min(1, "Pet name is required"),
-  petType: z.string().min(1, "Pet type is required"),
+  package: z.string().min(1, "Selecteer een pakket"),
+  name: z.string().min(2, "Naam moet minimaal 2 karakters lang zijn"),
+  email: z.string().email("Ongeldig e-mailadres"),
+  phone: z.string().min(10, "Voer een geldig telefoonnummer in"),
+  petName: z.string().min(1, "Naam van het huisdier is verplicht"),
+  petType: z.string().min(1, "Type huisdier is verplicht"),
   date: z.date({
-    required_error: "Please select a date",
+    required_error: "Selecteer een datum",
   }),
-  time: z.string().min(1, "Please select a time"),
+  time: z.string().min(1, "Selecteer een tijd"),
   specialRequests: z.string().optional(),
 });
 

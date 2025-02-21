@@ -21,18 +21,19 @@ import { Calendar as CalendarIcon, Package } from "lucide-react";
 import { useCallback, useState } from "react";
 import * as z from "zod";
 import { packages } from "@/lib/const";
+import { nl } from 'date-fns/locale'; // Import the Dutch locale
 
 
 
 
-const timeSlots = ["09:00 AM", "10:00 AM", "11:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "04:00 PM"];
+const timeSlots = ["10:00 AM", "11:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "04:00 PM"];
 
 // --- Helper Functions ---
 
 const getStepTitle = (step: number): string => {
   switch (step) {
     case 1:
-      return "Choose Package";
+      return "Kies je shoot (thuis, buiten of puppy)";
     case 2:
       return "Your Details";
     case 3:
@@ -99,7 +100,7 @@ const PersonalDetails = ({ form }: { form: any }) => (
         name="name"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Your Name</FormLabel>
+            <FormLabel>Naam</FormLabel>
             <FormControl>
               <Input placeholder="John Doe" {...field} />
             </FormControl>
@@ -125,9 +126,9 @@ const PersonalDetails = ({ form }: { form: any }) => (
         name="phone"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Phone Number</FormLabel>
+            <FormLabel>Telefoon Nummer</FormLabel>
             <FormControl>
-              <Input placeholder="(123) 456-7890" {...field} />
+              <Input placeholder="06 12345678" {...field} />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -138,17 +139,17 @@ const PersonalDetails = ({ form }: { form: any }) => (
         name="petType"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Pet Type</FormLabel>
+            <FormLabel>Huisdier</FormLabel>
             <Select onValueChange={field.onChange} defaultValue={field.value}>
               <FormControl>
                 <SelectTrigger>
-                  <SelectValue placeholder="Select pet type" />
+                  <SelectValue placeholder="Selecteer huisdiertype" />
                 </SelectTrigger>
               </FormControl>
               <SelectContent>
-                <SelectItem value="dog">Dog</SelectItem>
-                <SelectItem value="cat">Cat</SelectItem>
-                <SelectItem value="other">Other</SelectItem>
+                <SelectItem value="dog">Hond</SelectItem>
+                <SelectItem value="cat">Kat</SelectItem>
+                <SelectItem value="other">Anders</SelectItem>
               </SelectContent>
             </Select>
             <FormMessage />
@@ -160,7 +161,7 @@ const PersonalDetails = ({ form }: { form: any }) => (
         name="petName"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Pet&apos;s Name</FormLabel>
+            <FormLabel>Huisdier Naam</FormLabel>
             <FormControl>
               <Input placeholder="Max" {...field} />
             </FormControl>
@@ -174,9 +175,9 @@ const PersonalDetails = ({ form }: { form: any }) => (
       name="specialRequests"
       render={({ field }) => (
         <FormItem>
-          <FormLabel>Special Requests</FormLabel>
+          <FormLabel>Speciale verzoeken</FormLabel>
           <FormControl>
-            <Textarea placeholder="Any special requirements or preferences..." {...field} />
+            <Textarea placeholder="Eventuele speciale vereisten of voorkeuren..." {...field} />
           </FormControl>
           <FormMessage />
         </FormItem>
@@ -192,23 +193,27 @@ const Scheduling = ({ form }: { form: any }) => (
       name="date"
       render={({ field }) => (
         <FormItem className="flex flex-col">
-          <FormLabel>Date</FormLabel>
+          <FormLabel>Datum</FormLabel>
           <Popover>
             <PopoverTrigger asChild>
               <FormControl>
                 <Button variant="outline" className={cn("w-full pl-3 text-left font-normal", !field.value && "text-muted-foreground")}>
-                  {field.value ? format(field.value, "PPP") : <span>Pick a date</span>}
+                    {field.value ? format(field.value, "EEEE d MMMM yyyy", { locale: nl}) : <span>Kies een datum</span>}
                   <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                 </Button>
               </FormControl>
             </PopoverTrigger>
             <PopoverContent className="w-auto p-0" align="start">
               <Calendar
-                mode="single"
-                selected={field.value}
-                onSelect={field.onChange}
-                disabled={(date) => date < new Date() || date < new Date("1900-01-01")}
-                initialFocus
+              mode="single"
+              selected={field.value}
+              onSelect={field.onChange}
+              disabled={(date) => {
+                return date < new Date() || // Can't select past dates
+                   date < new Date("1900-01-01") || // Reasonable minimum date
+                   date.getDay() !== 0 // Only allow Sundays (0 = Sunday)
+              }}
+              initialFocus
               />
             </PopoverContent>
           </Popover>
@@ -221,11 +226,11 @@ const Scheduling = ({ form }: { form: any }) => (
       name="time"
       render={({ field }) => (
         <FormItem>
-          <FormLabel>Time</FormLabel>
+          <FormLabel>Tijd</FormLabel>
           <Select onValueChange={field.onChange} defaultValue={field.value}>
             <FormControl>
               <SelectTrigger>
-                <SelectValue placeholder="Select preferred time" />
+                <SelectValue placeholder="Selecteer voorkeurstijd" />
               </SelectTrigger>
             </FormControl>
             <SelectContent>
@@ -245,7 +250,7 @@ const Scheduling = ({ form }: { form: any }) => (
 
 // --- Main Component ---
 export default function BookingForm() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(3);
   const totalSteps = 3;
 
   // --- New State Variables for Submission Handling ---
@@ -262,7 +267,13 @@ export default function BookingForm() {
       petName: "",
       petType: "",
       package: "",
-      date: new Date(),
+      date: (() => {
+        const today = new Date();
+        const daysUntilSunday = (7 - today.getDay()) % 7;
+        const nextSunday = new Date(today);
+        nextSunday.setDate(today.getDate() + daysUntilSunday);
+        return nextSunday;
+      })(),
       time: "",
       specialRequests: "",
     },
@@ -321,8 +332,8 @@ export default function BookingForm() {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4">Book Your Pet Photo Session</h1>
-            <p className="text-lg text-muted-foreground">Let&apos;s capture those precious moments with your furry friend</p>
+            <h1 className="text-4xl font-bold mb-4">Klaar om samen onvergetelijke foto&apos;s te maken? </h1>
+            {/* <p className="text-lg text-muted-foreground">Let&apos;s capture those precious moments with your furry friend</p> */}
           </div>
 
           <div className="mb-8">

@@ -41,10 +41,9 @@ export default function ContactPage() {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold mb-4">Get in Touch</h1>
+          <h1 className="text-4xl font-bold mb-4">Contact</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have questions about our services or want to schedule a session? We&pos;d love to hear from you! Fill out the form below or use our
-            contact information to reach us directly.
+            Laten we samen plannen maken! Vul het formulier in of mail naar info@petshoot.nl.
           </p>
         </div>
 
@@ -52,12 +51,12 @@ export default function ContactPage() {
           {/* Contact Information */}
           <div className="space-y-12">
             <div>
-              <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
+              <h2 className="text-2xl font-semibold mb-6">Contact Informatie</h2>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <MapPin className="w-6 h-6 text-primary mt-1" />
                   <div>
-                    <h3 className="font-medium">Location</h3>
+                    <h3 className="font-medium">Locatie</h3>
                     <p className="text-muted-foreground">
                       Goudhaver 75
                       <br />
@@ -65,13 +64,7 @@ export default function ContactPage() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4">
-                  <Phone className="w-6 h-6 text-primary mt-1" />
-                  <div>
-                    <h3 className="font-medium">Phone</h3>
-                    <p className="text-muted-foreground">(123) 456-7890</p>
-                  </div>
-                </div>
+    
                 <div className="flex items-start space-x-4">
                   <Mail className="w-6 h-6 text-primary mt-1" />
                   <div>
@@ -83,20 +76,12 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold mb-6">Studio Hours</h2>
-              <div className="space-y-3">
+              <h2 className="text-2xl font-semibold mb-6">Openingstijden</h2>
+              <div className="space-y-3">      
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Monday - Friday</span>
-                  <span>9:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Saturday</span>
+                  <span className="text-muted-foreground">Zondag</span>
                   <span>10:00 AM - 4:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Sunday</span>
-                  <span>Closed</span>
-                </div>
+                </div>         
               </div>
             </div>
 
