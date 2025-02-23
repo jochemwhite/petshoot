@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Camera, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
-import { packages } from "@/lib/const";
 
 export function Footer() {
   return (
@@ -13,12 +12,18 @@ export function Footer() {
               <Camera className="h-6 w-6" />
               <span className="font-bold">Petshoot</span>
             </Link>
-            <p className="text-muted-foreground">Capturing precious moments with your furry family members through professional pet photography.</p>
+            <p className="text-muted-foreground">
+              Bij Petshoot draait het niet om perfecte poses, maar om de échte momenten die jouw band met je huisdier uniek maken.{" "}
+            </p>
             <div className="flex space-x-4">
-              <Link href="https://instagram.com" className="text-muted-foreground hover:text-foreground">
+              <Link href="https://www.instagram.com/petshoot_nl" className="text-muted-foreground hover:text-foreground" target="_blank">
                 <Instagram className="h-5 w-5" />
               </Link>
-              <Link href="https://facebook.com" className="text-muted-foreground hover:text-foreground">
+              <Link
+                href="https://www.facebook.com/profile.php?id=100080496780034"
+                className="text-muted-foreground hover:text-foreground"
+                target="_blank"
+              >
                 <Facebook className="h-5 w-5" />
               </Link>
             </div>
@@ -45,13 +50,21 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Services</h3>
             <ul className="space-y-3">
-              {packages.map((service) => (
-                <li key={service.href}>
-                  <Link href={`/services/${service.href}`} className="text-muted-foreground hover:text-foreground transition-colors">
-                    {service.name}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href={`/services/thuis-shoot`} className="text-muted-foreground hover:text-foreground transition-colors">
+                  Thuis Shoot
+                </Link>
+              </li>
+              <li>
+                <Link href={`/services/buiten-shoot`} className="text-muted-foreground hover:text-foreground transition-colors">
+                  Buiten Shoot
+                </Link>
+              </li>
+              <li>
+                <Link href={`/services/puppy-shoot`} className="text-muted-foreground hover:text-foreground transition-colors">
+                  Puppy Shoot
+                </Link>
+              </li>
             </ul>
           </div>
 

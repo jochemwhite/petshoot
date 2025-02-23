@@ -46,9 +46,9 @@ export default function ContactForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>Naam</FormLabel>
               <FormControl>
-                <Input placeholder="Your name" {...field} />
+                <Input placeholder="Naam" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -61,7 +61,7 @@ export default function ContactForm() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="your@email.com" {...field} />
+                <Input placeholder="mijn@email.nl" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -72,9 +72,9 @@ export default function ContactForm() {
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Subject</FormLabel>
+              <FormLabel>Onderwerp</FormLabel>
               <FormControl>
-                <Input placeholder="What's this about?" {...field} />
+                <Input placeholder="Waar gaat het over?" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -85,9 +85,9 @@ export default function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel>Bericht</FormLabel>
               <FormControl>
-                <Textarea placeholder="Your message..." className="min-h-[150px]" {...field} />
+                <Textarea placeholder="jouw bericht..." className="min-h-[150px]" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

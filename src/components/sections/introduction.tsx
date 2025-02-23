@@ -12,12 +12,12 @@ export default function Introduction() {
             huisdier daarom in een omgeving waar het zich thuis voelt: bij jou aan huis of tijdens een avontuur in de natuur. Liever de studio in? Ook
             dat is geen probleem.
           </p>
-          <div className="flex space-x-2 justify-center">
-            <div className="flex items-start gap-4 p-6 bg-card rounded-lg shadow-lg">
+          <div className="flex flex-col md:flex-row md:space-x-2 space-y-2 md:space-y-0 justify-center ">
+            <div className="flex items-center gap-4 p-6 bg-card rounded-lg shadow-lg md:w-1/2 w-full">
               <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0" />
               <span>Fotograferen bij jou thuis of op locatie </span>
             </div>
-            <div className="flex items-start gap-4 p-6 bg-card rounded-lg shadow-lg w-1/2">
+            <div className="flex items-center gap-4 p-6 bg-card rounded-lg shadow-lg md:w-1/2 w-full">
               <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0" />
               <span>Overal in Nederland </span>
             </div>

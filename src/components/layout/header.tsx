@@ -1,28 +1,38 @@
-"use client"
+"use client";
 
-import { cn } from "@/lib/utils"
-import { Camera, Menu, ChevronDown } from "lucide-react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { useState } from "react"
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
-import { Button } from "@/components/ui/button"
-import { packages } from "@/lib/const"
-import Image from "next/image"
+import { cn } from "@/lib/utils";
+import { Camera, Menu, ChevronDown } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import { title } from "process";
 
 export default function Header() {
-  const pathname = usePathname()
-  const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
   const links = [
     { title: "Home", url: "/" },
     {
       title: "Services",
       dropdown: true,
-      items: packages.map((pkg) => ({
-        title: pkg.name,
-        url: `/services/${pkg.href}`,
-      })),
+      items: [
+        {
+          title: "Thuis Shoot",
+          url: "/services/thuis-shoot",
+        },
+        {
+          title: "Buiten Shoot",
+          url: "/services/buiten-shoot",
+        },
+        {
+          title: "Puppy Shoot",
+          url: "/services/puppy-shoot",
+        },
+      ],
     },
     { title: "Portfolio", url: "/portfolio" },
     { title: "Booking", url: "/booking" },
@@ -35,7 +45,7 @@ export default function Header() {
       <div className="container flex h-16 items-center justify-between ">
         <div className="flex items-center justify-between w-full md:w-auto md:justify-start md:gap-10">
           <Link href="/" className="flex items-center space-x-2">
-            <Image src="/logo.png" width={50} height={50} alt="logo"  />
+            <Image src="/logo.png" width={50} height={50} alt="logo" />
             <span className="font-bold">Petshoot</span>
           </Link>
 
@@ -68,11 +78,8 @@ export default function Header() {
               return (
                 <Link
                   key={link.url || link.title}
-                  href={link.url || '/'}
-                  className={cn(
-                    "transition-colors hover:text-foreground/80",
-                    pathname === link.url ? "text-foreground" : "text-foreground/60"
-                  )}
+                  href={link.url || "/"}
+                  className={cn("transition-colors hover:text-foreground/80", pathname === link.url ? "text-foreground" : "text-foreground/60")}
                 >
                   {link.title}
                 </Link>
@@ -100,10 +107,12 @@ export default function Header() {
                   if (link.dropdown && link.items) {
                     return (
                       <div key={link.title}>
-                        <span className={cn(
+                        <span
+                          className={cn(
                             "text-lg px-2 py-1 rounded-md transition-colors hover:bg-secondary",
                             "text-foreground/60" // Mobile "Services" is not "active" in same way as desktop
-                          )}>
+                          )}
+                        >
                           {link.title}
                         </span>
                         <div className="ml-4 flex flex-col gap-2 mt-2">

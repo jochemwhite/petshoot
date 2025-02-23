@@ -60,7 +60,7 @@ export default function ContactPage() {
                     <p className="text-muted-foreground">
                       Goudhaver 75
                       <br />
-                      3892EH, Zeewolde
+                      3892BJ, Zeewolde
                     </p>
                   </div>
                 </div>

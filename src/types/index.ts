@@ -15,7 +15,7 @@ export interface Package {
   banner?: img;
 }
 
-interface img {
+export interface img {
   href: string;
   alt: string;
 }

@@ -20,24 +20,68 @@ import { format } from "date-fns";
 import { Calendar as CalendarIcon, Package } from "lucide-react";
 import { useCallback, useState } from "react";
 import * as z from "zod";
-import { packages } from "@/lib/const";
-import { nl } from 'date-fns/locale'; // Import the Dutch locale
-
-
-
+import { nl } from "date-fns/locale"; // Import the Dutch locale
 
 const timeSlots = ["10:00 AM", "11:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "04:00 PM"];
+
+const packages = [
+  {
+    id: "thuis",
+    name: "Thuis Shoot",
+    description: "Waar je huisdier zich het meest thuis voelt.",
+    price: 100,
+    features: [
+      "Studiofotografie met belichting ",
+      "Comfortabele thuisomgeving ",
+      "6 digitale foto’s ",
+      "Professionele bewerking",
+      "Alle huisdieren",
+      "Fotoshoot van 1 uur ",
+    ],
+    icon: Package,
+  },
+  {
+    id: "buiten",
+    name: "Buiten Shoot",
+    description: "Prachtige fotoshoot op een locatie naar keuze in de natuur.",
+    price: 125,
+    features: [
+      "Sfeervolle foto's",
+      "Prachtig, warm, natuurlijk licht",
+      "6 digitale foto’s ",
+      "Professionele bewerking",
+      "Alle huisdieren",
+      "Fotoshoot van 1 uur ",
+    ],
+    icon: Package,
+  },
+  {
+    id: "puppy",
+    name: "Puppy Shoot",
+    description: "Specialiseert zich in het vastleggen van de schattige momenten van puppy's.",
+    price: 155,
+    features: [
+      "Specialisatie: puppy's",
+      "Nest- of individuele shoot",
+      "6 digitale foto's",
+      "Online galerij",
+      "Geduldige aanpak",
+      "Schattige momenten",
+    ],
+    icon: Package,
+  },
+];
 
 // --- Helper Functions ---
 
 const getStepTitle = (step: number): string => {
   switch (step) {
     case 1:
-      return "Kies je shoot (thuis, buiten of puppy)";
+      return "Kies je shoot ";
     case 2:
-      return "Your Details";
+      return "Contactgegevens";
     case 3:
-      return "Schedule";
+      return "Datum & Tijd";
     default:
       return "";
   }
@@ -198,22 +242,24 @@ const Scheduling = ({ form }: { form: any }) => (
             <PopoverTrigger asChild>
               <FormControl>
                 <Button variant="outline" className={cn("w-full pl-3 text-left font-normal", !field.value && "text-muted-foreground")}>
-                    {field.value ? format(field.value, "EEEE d MMMM yyyy", { locale: nl}) : <span>Kies een datum</span>}
+                  {field.value ? format(field.value, "EEEE d MMMM yyyy", { locale: nl }) : <span>Kies een datum</span>}
                   <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                 </Button>
               </FormControl>
             </PopoverTrigger>
             <PopoverContent className="w-auto p-0" align="start">
               <Calendar
-              mode="single"
-              selected={field.value}
-              onSelect={field.onChange}
-              disabled={(date) => {
-                return date < new Date() || // Can't select past dates
-                   date < new Date("1900-01-01") || // Reasonable minimum date
-                   date.getDay() !== 0 // Only allow Sundays (0 = Sunday)
-              }}
-              initialFocus
+                mode="single"
+                selected={field.value}
+                onSelect={field.onChange}
+                disabled={(date) => {
+                  return (
+                    date < new Date() || // Can't select past dates
+                    date < new Date("1900-01-01") || // Reasonable minimum date
+                    date.getDay() !== 0
+                  ); // Only allow Sundays (0 = Sunday)
+                }}
+                initialFocus
               />
             </PopoverContent>
           </Popover>
@@ -250,7 +296,7 @@ const Scheduling = ({ form }: { form: any }) => (
 
 // --- Main Component ---
 export default function BookingForm() {
-  const [step, setStep] = useState(3);
+  const [step, setStep] = useState(1);
   const totalSteps = 3;
 
   // --- New State Variables for Submission Handling ---
