@@ -10,6 +10,12 @@ const contactFormSchema = z.object({
   email: z.string().email("Invalid email address"),
   subject: z.string().min(5, "Subject must be at least 5 characters"),
   message: z.string().min(10, "Message must be at least 10 characters"),
+  honeypot: z
+    .string()
+    .optional()
+    .refine((value) => !value, {
+      message: "Spam detected",
+    }),
 });
 
 export type ContactFormSchemaType = z.infer<typeof contactFormSchema>;
@@ -60,7 +66,7 @@ export async function sendContactEmail(data: ContactFormSchemaType) {
         <body>
             <div class="container">
                 <h1>Nieuw Contactformulier Bericht</h1>
-                <p>Er is een nieuw bericht verzonden via het contactformulier op uw website. Bekijk de details hieronder:</p>
+                <p>Er is een nieuw bericht verzonden via het contact formulier op uw website Petshoot. Bekijk de details hieronder:</p>
 
                 <div class="details-section">
                     <div class="detail-item">
@@ -83,7 +89,7 @@ export async function sendContactEmail(data: ContactFormSchemaType) {
 
                 <div class="footer">
                     <p>Met vriendelijke groet,<br/>
-                        Website Contactformulier</p>
+                        Amrio</p>
                 </div>
             </div>
         </body>
@@ -91,8 +97,8 @@ export async function sendContactEmail(data: ContactFormSchemaType) {
     `;
 
   const mailOptions = {
-    from: env.NODEMAILER_SENDER, // Or env.NODEMAILER_USER if you followed the previous suggestion
-    to: env.PHOTOGRAPHER_EMAIL, // Send contact form emails to the photographer as well
+    from: env.NODEMAILER_SENDER,
+    to: env.PHOTOGRAPHER_EMAIL,
     subject: `Contactformulier Bericht: ${subject}`, // Include the subject in the email subject
     html: emailHtml,
   };

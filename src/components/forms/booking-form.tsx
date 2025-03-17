@@ -191,9 +191,9 @@ const PersonalDetails = ({ form }: { form: any }) => (
                 </SelectTrigger>
               </FormControl>
               <SelectContent>
-                <SelectItem value="dog">Hond</SelectItem>
-                <SelectItem value="cat">Kat</SelectItem>
-                <SelectItem value="other">Anders</SelectItem>
+                <SelectItem value="hond">Hond</SelectItem>
+                <SelectItem value="kat">Kat</SelectItem>
+                <SelectItem value="anders">Anders</SelectItem>
               </SelectContent>
             </Select>
             <FormMessage />
@@ -434,7 +434,7 @@ export default function BookingForm() {
                     className="ml-auto"
                     disabled={isPending} // Disable button when submitting
                   >
-                    {isPending ? "Verzenden..." : "Complete Booking"} {/* Show "Verzenden..." when pending */}
+                    {isPending ? "Verzenden..." : "Boeking voltooien"} {/* Show "Verzenden..." when pending */}
                   </Button>
                 )}
               </div>

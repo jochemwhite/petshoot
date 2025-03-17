@@ -115,7 +115,7 @@
 
               <div class="footer">
                   <p>Met vriendelijke groet,<br/>
-                    Website Boekingssysteem</p>
+                    Amrio</p>
               </div>
           </div>
       </body>

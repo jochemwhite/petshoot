@@ -3,6 +3,7 @@ import Header from "@/components/layout/header";
 import { CSPostHogProvider } from "@/providers/posthog-provider";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Toaster, toast } from 'sonner';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <CSPostHogProvider>
           <Header />
+          <Toaster theme="light" />
           <main>{children}</main>
           <Footer />
         </CSPostHogProvider>
