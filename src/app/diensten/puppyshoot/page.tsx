@@ -4,42 +4,42 @@ import { GalleryImage } from "@/components/gallery-image";
 import { InfoCard } from "@/components/info-card";
 import CallToAction from "@/components/sections/cta";
 import { ServiceIncludeItem } from "@/components/service-include-item";
-import { Calendar, Camera, Clock, Download, ImagePlus, TreeDeciduous, Users } from "lucide-react";
+import { Calendar, Camera, Clock, Download, ImagePlus, Dog, Users, DogIcon } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: 'Buiten Shoot - Petshoot',
-  description: 'Prachtige fotoshoot op een locatie naar keuze in de natuur. Leg de avontuurlijke momenten van je huisdier vast.', // Beschrijving die de nadruk legt op de buitenlocatie
-  keywords: ['buiten fotoshoot', 'natuurlijke fotoshoot', 'huisdierenfotografie buiten', 'locatie fotoshoot', 'petshoot buiten', 'huisdierenfotografie', 'petshoot'], // Relevante zoekwoorden
+  title: "Puppyshoot - Petshoot", // Nu met de juiste naam van de studio
+  description: "Specialiseert zich in het vastleggen van de schattige momenten van puppy's.",
+  keywords: ["puppy", "fotoshoot", "hondenfotografie", "puppyfotografie", "huisdierenfotografie", "petshoot"], // Meer relevante zoekwoorden
   openGraph: {
-    title: 'Buiten Shoot - Petshoot',
-    description: 'Prachtige fotoshoot op een locatie naar keuze in de natuur. Leg de avontuurlijke momenten van je huisdier vast.',
-    url: 'https://www.petshoot.nl/buiten-shoot', // Vervang met de correcte URL
-    type: 'website',
+    title: "Puppyshoot - Petshoot",
+    description: "Specialiseert zich in het vastleggen van de schattige momenten van puppy's.",
+    url: "https://www.petshoot.nl/puppyshoot", // Vervang dit met de daadwerkelijke URL van de puppyshoot pagina
+    type: "website",
     images: [
       {
-        url: '/img/dogs/dog19.jpg', // Afbeelding van een buiten gefotografeerd huisdier
-        alt: 'Hond gefotografeerd tijdens een buiten fotoshoot door Petshoot', // Alt tekst met beschrijving en bedrijfsnaam
+        url: "/img/dogs/dog15.jpg", // Vervang dit met de URL van een representatieve afbeelding van Petshoot
+        alt: "Schattige puppy gefotografeerd door Petshoot", // Alt tekst met de naam van de studio
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Buiten Shoot - Petshoot',
-    description: 'Prachtige fotoshoot op een locatie naar keuze in de natuur. Leg de avontuurlijke momenten van je huisdier vast.',
+    card: "summary_large_image",
+    title: "Puppyshoot - Petshoot",
+    description: "Specialiseert zich in het vastleggen van de schattige momenten van puppy's.",
   },
 };
 
-export default function ServicePage() {
+export default function PuppyShootPage() {
   const features: string[] = [
-    "Sfeervolle foto's",
-    "Prachtig, warm, natuurlijk licht",
-    "6 digitale foto’s ",
-    "Professionele bewerking",
-    "Alle huisdieren",
-    "Fotoshoot van 1 uur ",
+    "Specialisatie: puppy's",
+    "Nest- of individuele shoot",
+    "6 digitale foto's",
+    "Online galerij",
+    "Geduldige aanpak",
+    "Schattige momenten",
   ];
 
   const included = [
@@ -67,27 +67,27 @@ export default function ServicePage() {
 
   const gallery = [
     {
-      href: "/img/cats/cat5.jpg",
-      alt: "cat image",
+      href: "/img/dogs/dog15.jpg",
+      alt: "puppy image 1",
     },
     {
-      href: "/img/dogs/dog2.jpg",
-      alt: "dog image",
+      href: "/img/dogs/dog16.jpg",
+      alt: "puppy image 2",
     },
     {
-      href: "/img/dogs/dog4.jpg",
-      alt: "horse image",
+      href: "/img/dogs/dog12.jpg",
+      alt: "puppy image 3",
     },
   ];
 
   return (
     <div className="min-h-screen pt-16 pb-16">
       <Banner
-        title="Buiten Shoot"
-        description="Prachtige fotoshoot op een locatie naar keuze in de natuur"
+        title="Puppyshoot"
+        description="Leg de liefste momenten van jouw pup vast"
         img={{
-          href: "/img/banners/buiten-shoot-banner.png",
-          alt: "Buiten Shoot banner",
+          href: "/img/dogs/dog15.jpg",
+          alt: "Puppyshoot banner",
         }}
       />
 
@@ -95,7 +95,7 @@ export default function ServicePage() {
         {/* Quick Info */}
         <section className="mb-24">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <InfoCard icon={TreeDeciduous} title="Pakketprijs" value="€125" />
+            <InfoCard icon={DogIcon} title="Pakketprijs" value="€155" />
             <InfoCard icon={Clock} title="Sessieduur" value="1 uur" />
             <InfoCard icon={Calendar} title="Beschikbaarheid" value="Boek nu" />
           </div>
@@ -106,8 +106,8 @@ export default function ServicePage() {
           <div className="flex-1 flex justify-center ">
             <div className="overflow-hidden rounded-lg">
               <Image
-                src="/img/dogs/dog19.jpg"
-                alt="Dog in the snow"
+                src="/img/dogs/dog16.jpg"
+                alt="blije puppy"
                 width={500}
                 height={500}
                 className="hover:scale-110 transition-transform duration-300 rounded-lg overflow-hidden shadow-lg relative"
@@ -116,25 +116,26 @@ export default function ServicePage() {
           </div>
 
           <div className="flex-1 max-w-3xl">
-            <h2 className="text-3xl font-bold text-center mb-8">Buitenshoot</h2>
-            <div className="prose prose-lg max-w-none">
+            <h2 className="text-3xl font-bold text-center mb-8">Puppyshoot</h2>
+            <div className="prose prose-lg max-w-none space-y-3">
+              <p>Leg de ondeugende blik, kleine pootjes en speelse capriolen vast voordat ze uitgroeien.</p>
               <p>
-                Ideaal voor actieve honden, paarden of nieuwsgierige dieren die van de natuur houden. Geen achtergrond van studioverlichting, maar het
-                ruisen van bomen, plonzend water of zacht zand onder de poten. Ik fotografeer je huisdier terwijl het in de buitenlucht rent, snuffelt
-                of geniet.{" "}
+                Een puppy is puur enthousiasme: kwispelend, ondeugend en onvoorspelbaar. Ik fotografeer je pup tijdens het sluimeren, ravotten of
+                ontdekken van de wereld. Thuis in hun veilige mandje of buiten tijdens de eerste avonturen in het gras.{" "}
               </p>
-              <h5 className="font-bold text-xl mt-6">Waarom buiten?</h5>
-              <p>
-                Buiten zijn dieren vaak meer ontspannen, speelser en… stiekem op hun mooist. Of het nu om een hond gaat die vol overgave een bal
-                achtervolgt, een paard in galop of een kat die nieuwsgierig een pad verkent: ik vang die échte persoonlijkheid.
-              </p>
+              <h5 className="font-bold text-xl">Waarom nu vastleggen?</h5>
+              <div>
+                <p>Over een jaar is die schattige kop al veranderd, maar deze foto’s blijven. Ik richt me op:</p>
+                <ul className="list-disc list-inside pl-5">
+                  <li>Die typische puppyblik: nieuwsgierig, slaperig of vol overgave.</li>
+                  <li>Speelse interactie met jou of een speeltje.</li>
+                  <li>De eerste keer zwemmen, spelen in de sneeuw of ravotten in de modder. Kortom momenten die je niet wilt vergeten. </li>
+                </ul>
+              </div>
 
-              <p className="mt-6">
-                Kies zelf de locatie: het vertrouwde park om de hoek, een verstild bos of jullie favoriete strand. Wil je zelf ook op de foto? Geen
-                probleem! Samen genieten is samen herinneringen maken.
-              </p>
-              <p className="mt-6 italic">
-                Twijfel je over het weer of de ideale plek? Ik denk graag met je mee. Vul het{" "}
+              <p>Heb je een kleine druktemaker? Maak je geen zorgen dat je pup niet stilzit. Ik werk op hun tempo, met veel geduld.</p>
+              <p className="italic">
+                Kleine puppy’s worden groot. Wil je je opgegroeide viervoeter vast laten leggen? Boek een thuis- of buitenshoot! Vul het
                 <Link href="/contact">
                   <span className="hover:text-[#444]">contactformulie</span>
                 </Link>{" "}

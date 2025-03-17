@@ -1,6 +1,7 @@
 import ContactForm from "@/components/forms/contact-form";
 import { Mail, MapPin, MessageSquare, Phone } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata = {
   title: "Contacteer Huisdierfotograaf in Zeewolde | Vragen? Neem Contact Op | Petshoot",
@@ -43,7 +44,11 @@ export default function ContactPage() {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold mb-4">Contact</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Laten we samen plannen maken! Vul het formulier in of mail naar info@petshoot.nl.
+            Laten we samen plannen maken! Vul het formulier in of mail naar{" "}
+            <Link href="mailto:info@petshoot.nl">
+              <span>info@petshoot.nl</span>
+            </Link>
+            .
           </p>
         </div>
 
@@ -51,7 +56,7 @@ export default function ContactPage() {
           {/* Contact Information */}
           <div className="space-y-12">
             <div>
-              <h2 className="text-2xl font-semibold mb-6">Contact Informatie</h2>
+              <h2 className="text-2xl font-semibold mb-6">Contactinformatie</h2>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <MapPin className="w-6 h-6 text-primary mt-1" />
@@ -64,11 +69,11 @@ export default function ContactPage() {
                     </p>
                   </div>
                 </div>
-    
+
                 <div className="flex items-start space-x-4">
                   <Mail className="w-6 h-6 text-primary mt-1" />
                   <div>
-                    <h3 className="font-medium">Email</h3>
+                    <h3 className="font-medium">E-mail</h3>
                     <p className="text-muted-foreground">info@petshoot.nl</p>
                   </div>
                 </div>
@@ -77,11 +82,11 @@ export default function ContactPage() {
 
             <div>
               <h2 className="text-2xl font-semibold mb-6">Openingstijden</h2>
-              <div className="space-y-3">      
+              <div className="space-y-3">
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Zondag</span>
                   <span>10:00 AM - 4:00 PM</span>
-                </div>         
+                </div>
               </div>
             </div>
 
@@ -95,7 +100,7 @@ export default function ContactPage() {
           <div className="bg-card p-8 rounded-xl shadow-lg">
             <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
               <MessageSquare className="w-6 h-6" />
-              Send us a Message
+              Stuur me een bericht
             </h2>
 
             <ContactForm />

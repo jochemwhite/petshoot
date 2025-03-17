@@ -5,24 +5,24 @@ import { Camera, DogIcon, TreeDeciduous } from "lucide-react";
 export default function Services() {
   const packages = [
     {
-      name: "Thuis Shoot",
+      name: "Thuisshoot",
       description: "Waar je huisdier zich het meest thuis voelt.",
       price: 100,
-      href: "thuis-shoot",
+      href: "thuisshoot",
       icon: Camera,
     },
     {
-      name: "Buiten Shoot",
+      name: "Buitenshoot",
       description: "Prachtige fotoshoot op een locatie naar keuze in de natuur.",
       price: 125,
-      href: "buiten-shoot",
+      href: "buitenshoot",
       icon: TreeDeciduous,
     },
     {
-      name: "Puppy Shoot",
-      description: "Specialiseert zich in het vastleggen van de schattige momenten van puppy's.",
+      name: "Puppyshoot",
+      description: "Leg de liefste momenten van jouw pup vast.",
       price: 155,
-      href: "puppy-shoot",
+      href: "puppyshoot",
       icon: DogIcon,
     },
   ];
@@ -30,7 +30,7 @@ export default function Services() {
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-16">Our Services</h2>
+        <h2 className="text-4xl font-bold text-center mb-16">Diesnten</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {packages.map((service, index) => (
             <div key={index} className="bg-card p-8 rounded-xl shadow-lg text-center">
@@ -38,7 +38,7 @@ export default function Services() {
               <h3 className="text-2xl font-semibold mb-4">{service.name}</h3>
               <p className="text-3xl font-bold text-primary mb-4">€{service.price}</p>
               <p className="text-muted-foreground mb-6 h-8">{service.description}</p>
-              <Link href={`/services/${service.href}`}>
+              <Link href={`/diensten/${service.href}`}>
                 <Button variant="outline" className="w-full">
                   Lees meer
                 </Button>

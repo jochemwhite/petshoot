@@ -31,7 +31,7 @@ export default function FeaturedWork() {
         <div className="text-center mt-12">
           <Link href="/portfolio">
             <Button variant="outline" size="lg">
-              zie volledige portfolio
+              Zie volledige portfolio
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>

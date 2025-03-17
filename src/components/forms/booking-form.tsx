@@ -27,7 +27,7 @@ const timeSlots = ["10:00 AM", "11:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "
 const packages = [
   {
     id: "thuis",
-    name: "Thuis Shoot",
+    name: "Thuisshoot",
     description: "Waar je huisdier zich het meest thuis voelt.",
     price: 100,
     features: [
@@ -42,7 +42,7 @@ const packages = [
   },
   {
     id: "buiten",
-    name: "Buiten Shoot",
+    name: "Buitenshoot",
     description: "Prachtige fotoshoot op een locatie naar keuze in de natuur.",
     price: 125,
     features: [
@@ -57,8 +57,8 @@ const packages = [
   },
   {
     id: "puppy",
-    name: "Puppy Shoot",
-    description: "Specialiseert zich in het vastleggen van de schattige momenten van puppy's.",
+    name: "Puppyshoot",
+    description: "Leg de liefste momenten van jouw pup vast.",
     price: 155,
     features: [
       "Specialisatie: puppy's",
@@ -157,7 +157,7 @@ const PersonalDetails = ({ form }: { form: any }) => (
         name="email"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Email</FormLabel>
+            <FormLabel>E-mail</FormLabel>
             <FormControl>
               <Input placeholder="john@example.com" {...field} />
             </FormControl>
@@ -170,7 +170,7 @@ const PersonalDetails = ({ form }: { form: any }) => (
         name="phone"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Telefoon Nummer</FormLabel>
+            <FormLabel>Telefoon nummer</FormLabel>
             <FormControl>
               <Input placeholder="06 12345678" {...field} />
             </FormControl>
@@ -421,12 +421,12 @@ export default function BookingForm() {
               <div className="flex justify-between pt-8">
                 {step > 1 && (
                   <Button type="button" variant="outline" onClick={handlePrevious}>
-                    Previous
+                    Vorige
                   </Button>
                 )}
                 {step !== totalSteps ? (
                   <Button type="button" className="ml-auto" onClick={() => handleNext()}>
-                    Continue
+                    Volgende
                   </Button>
                 ) : (
                   <Button

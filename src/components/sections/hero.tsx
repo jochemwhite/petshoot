@@ -25,7 +25,7 @@ export default function Hero() {
               Bekijk portfolio
             </Button>
           </Link>
-          <Link href="/booking">
+          <Link href="/boeken">
             <Button size="lg" variant="secondary" className="text-xl px-8 py-6 h-auto">
               <Heart className="mr-3 h-6 w-6" />
               Boek een fotoshoot

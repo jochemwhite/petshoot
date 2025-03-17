@@ -10,40 +10,32 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Thuis Shoot - Petshoot", // Duidelijke titel met bedrijfsnaam
-  description: "Waar je huisdier zich het meest thuis voelt. Comfortabele fotoshoot in de vertrouwde thuisomgeving.", // Beschrijving die de focus van de shoot benadrukt
-  keywords: [
-    "thuis fotoshoot",
-    "huisdierenfotografie thuis",
-    "huisdier fotoshoot",
-    "comfortabele fotoshoot",
-    "petshoot thuis",
-    "huisdierenfotografie",
-    "petshoot",
-  ], // Relevante zoekwoorden
+  title: 'Buitenshoot - Petshoot',
+  description: 'Prachtige fotoshoot op een locatie naar keuze in de natuur. Leg de avontuurlijke momenten van je huisdier vast.', // Beschrijving die de nadruk legt op de buitenlocatie
+  keywords: ['buiten fotoshoot', 'natuurlijke fotoshoot', 'huisdierenfotografie buiten', 'locatie fotoshoot', 'petshoot buiten', 'huisdierenfotografie', 'petshoot'], // Relevante zoekwoorden
   openGraph: {
-    title: "Thuis Shoot - Petshoot",
-    description: "Waar je huisdier zich het meest thuis voelt. Comfortabele fotoshoot in de vertrouwde thuisomgeving.",
-    url: "https://www.petshoot.nl/thuis-shoot", // Vervang met de correcte URL
-    type: "website",
+    title: 'Buitenshoot - Petshoot',
+    description: 'Prachtige fotoshoot op een locatie naar keuze in de natuur. Leg de avontuurlijke momenten van je huisdier vast.',
+    url: 'https://www.petshoot.nl/buitenshoot', // Vervang met de correcte URL
+    type: 'website',
     images: [
       {
-        url: "/img/cats/cat13.jpg", // Afbeelding van een thuis gefotografeerd huisdier
-        alt: "Kat gefotografeerd tijdens een thuis fotoshoot door Petshoot", // Alt tekst met beschrijving en bedrijfsnaam
+        url: '/img/dogs/dog19.jpg', // Afbeelding van een buiten gefotografeerd huisdier
+        alt: 'Hond gefotografeerd tijdens een buiten fotoshoot door Petshoot', // Alt tekst met beschrijving en bedrijfsnaam
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Thuis Shoot - Petshoot",
-    description: "Waar je huisdier zich het meest thuis voelt. Comfortabele fotoshoot in de vertrouwde thuisomgeving.",
+    card: 'summary_large_image',
+    title: 'Buitenshoot - Petshoot',
+    description: 'Prachtige fotoshoot op een locatie naar keuze in de natuur. Leg de avontuurlijke momenten van je huisdier vast.',
   },
 };
 
 export default function ServicePage() {
   const features: string[] = [
-    "Studiofotografie met belichting ",
-    "Comfortabele thuisomgeving ",
+    "Sfeervolle foto's",
+    "Prachtig, warm, natuurlijk licht",
     "6 digitale foto’s ",
     "Professionele bewerking",
     "Alle huisdieren",
@@ -74,24 +66,28 @@ export default function ServicePage() {
   ];
 
   const gallery = [
-    { href: "/img/cats/cat11.jpg", alt: "cat image" },
-
     {
-      href: "/img/dogs/dog11.jpg",
+      href: "/img/cats/cat5.jpg",
+      alt: "cat image",
+    },
+    {
+      href: "/img/dogs/dog2.jpg",
       alt: "dog image",
     },
-
-    { href: "/img/cats/cat14.jpg", alt: "cat image" },
+    {
+      href: "/img/dogs/dog4.jpg",
+      alt: "horse image",
+    },
   ];
 
   return (
     <div className="min-h-screen pt-16 pb-16">
       <Banner
-        title="Thuis Shoot"
-        description="Waar je huisdier zich het meest thuis voelt"
+        title="Buitenshoot"
+        description="Prachtige fotoshoot op een locatie naar keuze in de natuur"
         img={{
-          href: "/img/cats/cat13.jpg",
-          alt: "Thuis Shoot banner",
+          href: "/img/banners/buiten-shoot-banner.png",
+          alt: "Buitenshoot banner",
         }}
       />
 
@@ -99,7 +95,7 @@ export default function ServicePage() {
         {/* Quick Info */}
         <section className="mb-24">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <InfoCard icon={Camera} title="Pakketprijs" value="€100" />
+            <InfoCard icon={TreeDeciduous} title="Pakketprijs" value="€125" />
             <InfoCard icon={Clock} title="Sessieduur" value="1 uur" />
             <InfoCard icon={Calendar} title="Beschikbaarheid" value="Boek nu" />
           </div>
@@ -110,8 +106,8 @@ export default function ServicePage() {
           <div className="flex-1 flex justify-center ">
             <div className="overflow-hidden rounded-lg">
               <Image
-                src="/img/cats/cat13.jpg"
-                alt="Cat on the couch"
+                src="/img/dogs/dog19.jpg"
+                alt="Dog in the snow"
                 width={500}
                 height={500}
                 className="hover:scale-110 transition-transform duration-300 rounded-lg overflow-hidden shadow-lg relative"
@@ -120,21 +116,25 @@ export default function ServicePage() {
           </div>
 
           <div className="flex-1 max-w-3xl">
-            <h2 className="text-3xl font-bold text-center mb-8">Thuis Shoot</h2>
+            <h2 className="text-3xl font-bold text-center mb-8">Buitenshoot</h2>
             <div className="prose prose-lg max-w-none">
               <p>
-                Perfect voor dieren die houden van hun eigen vertrouwde plek. Een uur vol kwispelende momenten, spinnende herinneringen of speelse
-                capriolen: deze fotoshoot thuis draait om de unieke band tussen jou en je huisdier(en). Samen creëren we foto’s die niet alleen mooi
-                zijn, maar ook een verhaal vertellen. Precies zoals jullie het beleven.
+                Ideaal voor actieve honden, paarden of nieuwsgierige dieren die van de natuur houden. Geen achtergrond van studioverlichting, maar het
+                ruisen van bomen, plonzend water of zacht zand onder de poten. Ik fotografeer je huisdier terwijl het in de buitenlucht rent, snuffelt
+                of geniet.{" "}
               </p>
-              <h5 className="font-bold text-xl mt-6">Zo maak ik het verschil: </h5>
+              <h5 className="font-bold text-xl mt-6">Waarom buiten?</h5>
               <p>
-                We beginnen met een persoonlijk overleg over locatie, accessoires en jouw wensen. Tijdens de shoot volgen we het ritme van je dier, of
-                het nu om twee energieke honden gaat of katten die liever observeren. Geen gehaast, geen druk. Slechts aandacht voor wat telt: échte
-                emoties in jullie eigen omgeving.{" "}
+                Buiten zijn dieren vaak meer ontspannen, speelser en… stiekem op hun mooist. Of het nu om een hond gaat die vol overgave een bal
+                achtervolgt, een paard in galop of een kat die nieuwsgierig een pad verkent: ik vang die échte persoonlijkheid.
+              </p>
+
+              <p className="mt-6">
+                Kies zelf de locatie: het vertrouwde park om de hoek, een verstild bos of jullie favoriete strand. Wil je zelf ook op de foto? Geen
+                probleem! Samen genieten is samen herinneringen maken.
               </p>
               <p className="mt-6 italic">
-                Ook voor emotionele momenten, zoals een afscheid of jubileum, ben je bij mij aan het juiste adres. Vul het{" "}
+                Twijfel je over het weer of de ideale plek? Ik denk graag met je mee. Vul het{" "}
                 <Link href="/contact">
                   <span className="hover:text-[#444]">contactformulie</span>
                 </Link>{" "}
@@ -142,7 +142,6 @@ export default function ServicePage() {
                 <Link href="mailto:info@petshoot.nl">
                   <span className="hover:text-[#444]">info@petshoot.nl</span>
                 </Link>{" "}
-                voor de mogelijkheden.
               </p>
             </div>
           </div>

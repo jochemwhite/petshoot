@@ -63,7 +63,7 @@ export default function Page() {
           <h2 className="text-3xl font-bold mb-6">Mijn Missie</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
             Bij Petshoot draait het niet om perfecte poses, maar om de échte momenten die jouw band met je huisdier uniek maken. Of we nu bij jou
-            thuis, bij mij in de studio of buiten fotograferen: mijn doel is om die spontaniteit en emotie te vangen, precies zoals ze gebeuren. .
+            thuis, bij mij in de studio of buiten fotograferen: mijn doel is om die spontaniteit en emotie te vangen, precies zoals ze gebeuren.
           </p>
         </div>
       </section>
@@ -87,11 +87,11 @@ export default function Page() {
                 dieren en het vastleggen van hun karakter. Of het nu gaat om foto’s bij mij in de studio, bij jou thuis of op een door jou gekozen
                 locatie in de natuur.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed py-2">
+              {/* <p className="text-lg text-muted-foreground leading-relaxed py-2">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae vero accusantium hic corrupti quibusdam tempora voluptatem facere nisi
                 fugiat. Consectetur ea earum officiis pariatur eaque alias quasi, et eveniet iste.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              </p> */}
+              <p className="text-lg text-muted-foreground leading-relaxed mt-2">
                 Waarom ik dit doe? Omdat huisdieren niet "gewoon dieren" zijn. Het zijn familieleden. Ze verdienen herinneringen die net zo levendig
                 zijn als zijzelf.
               </p>

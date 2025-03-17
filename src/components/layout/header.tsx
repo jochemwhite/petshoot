@@ -17,26 +17,26 @@ export default function Header() {
   const links = [
     { title: "Home", url: "/" },
     {
-      title: "Services",
+      title: "Diensten",
       dropdown: true,
       items: [
         {
-          title: "Thuis Shoot",
-          url: "/services/thuis-shoot",
+          title: "Thuisshoot",
+          url: "/diensten/thuisshoot",
         },
         {
-          title: "Buiten Shoot",
-          url: "/services/buiten-shoot",
+          title: "Buitenshoot",
+          url: "/diensten/buitenshoot",
         },
         {
-          title: "Puppy Shoot",
-          url: "/services/puppy-shoot",
+          title: "Puppyshoot",
+          url: "/diensten/puppyshoot",
         },
       ],
     },
     { title: "Portfolio", url: "/portfolio" },
-    { title: "Booking", url: "/booking" },
-    { title: "About", url: "/about" },
+    { title: "Boeken", url: "/boeken" },
+    { title: "Over mij", url: "/over-mij" },
     { title: "Contact", url: "/contact" },
   ];
 
