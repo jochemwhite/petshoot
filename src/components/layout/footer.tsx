@@ -83,8 +83,9 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Petshoots. All rights reserved.</p>
             <div className="flex gap-6 text-sm text-muted-foreground">
-              Algemene Voorwaarden
-              <Link href="/algemene-voorwaarden" className="hover:text-foreground transition-colors"></Link>
+              <Link href="/algemene-voorwaarden" className="hover:text-foreground transition-colors">
+                Algemene Voorwaarden
+              </Link>
             </div>
             <div className="flex gap-6 text-sm text-muted-foreground">
               <Link href="privacy" className="hover:text-foreground transition-colors">
